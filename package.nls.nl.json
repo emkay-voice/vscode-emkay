@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Emkay openen",
+  "cmd.newSkill": "Nieuwe skill…",
+  "cmd.run": "De skill in Emkay uitvoeren",
+  "cmd.say": "Iets tegen Emkay zeggen…",
+  "cmd.test": "De skill testen (golden utterances)",
+  "cmd.stop": "De skill in Emkay stoppen",
+  "cmd.showLog": "Log van Emkay tonen",
+  "cfg.url": "De Emkay waarin je skill draait. `https://app.emkay.ai/` is de nieuwste build; een Emkay uit je huis (Emkay Home) of `http://localhost:8080/` werken ook. Emkay wordt geopend met `?dev`.",
+  "cfg.reloadOnSave": "De skill opnieuw uitvoeren in Emkay telkens als je een van zijn bestanden opslaat.",
+  "cfg.busLog": "Ook elk bericht op de bus van Emkay tonen (uitvoer \"Emkay bus\"). Handig om precies te zien wat er gebeurt; veel tekst.",
+  "walk.title": "Maak je eerste spraakskill",
+  "walk.description": "Van niets tot Emkay je antwoordt, in vier kleine stappen – niets te installeren, alles draait hier.",
+  "walk.new.title": "Een skill maken",
+  "walk.new.description": "Een skill is een paar kleine bestanden: de zinnen die je zegt, wat Emkay antwoordt, en een beetje Python.\n[Een skill maken](command:emkay.newSkill)",
+  "walk.run.title": "In Emkay uitvoeren",
+  "walk.run.description": "Emkay opent naast je code en laadt je skill. Daarna draait bij elke keer opslaan de nieuwe versie.\n[Uitvoeren](command:emkay.run)",
+  "walk.say.title": "Ermee praten",
+  "walk.say.description": "Typ wat je zou zeggen – \"hallo van mijn skill\" – en hoor Emkay antwoorden.\n[Iets zeggen](command:emkay.say)",
+  "walk.test.title": "Testen",
+  "walk.test.description": "De testzinnen in test/end2end/ gaan één voor één naar Emkay; elke zin moet je skill bereiken. Dezelfde tests als de Emkay-store en ovos-tui-client.\n[Testen](command:emkay.test)",
+  "cfg.templates": "Waar *Emkay: Nieuwe skill* zijn sjablonen vindt (`index.json` en een bestand per sjabloon). Gemaakt door [emkay-voice/dev](https://github.com/emkay-voice/dev) uit zijn `templates.json`."
+}

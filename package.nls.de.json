@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Emkay öffnen",
+  "cmd.newSkill": "Neuer Skill…",
+  "cmd.run": "Den Skill in Emkay ausführen",
+  "cmd.say": "Etwas zu Emkay sagen…",
+  "cmd.test": "Den Skill testen (Golden Utterances)",
+  "cmd.stop": "Den Skill in Emkay stoppen",
+  "cmd.showLog": "Emkays Log anzeigen",
+  "cfg.url": "Das Emkay, in dem dein Skill läuft. `https://app.emkay.ai/` ist der neueste Build; ein Emkay aus deinem Haus (Emkay Home) oder `http://localhost:8080/` gehen auch. Emkay wird mit `?dev` geöffnet.",
+  "cfg.reloadOnSave": "Den Skill bei jedem Speichern einer seiner Dateien erneut in Emkay ausführen.",
+  "cfg.busLog": "Auch jede Nachricht auf Emkays Bus anzeigen (Ausgabe \"Emkay bus\"). Praktisch, um genau zu sehen, was passiert; viel Text.",
+  "walk.title": "Bau deinen ersten Sprach-Skill",
+  "walk.description": "Von nichts bis Emkay dir antwortet, in vier kleinen Schritten – nichts zu installieren, alles läuft hier.",
+  "walk.new.title": "Einen Skill bauen",
+  "walk.new.description": "Ein Skill sind ein paar kleine Dateien: die Sätze, die du sagst, was Emkay antwortet, und ein wenig Python.\n[Einen Skill bauen](command:emkay.newSkill)",
+  "walk.run.title": "In Emkay ausführen",
+  "walk.run.description": "Emkay öffnet sich neben deinem Code und lädt deinen Skill. Danach läuft bei jedem Speichern die neue Version.\n[Ausführen](command:emkay.run)",
+  "walk.say.title": "Mit ihm sprechen",
+  "walk.say.description": "Tippe, was du sagen würdest – \"hallo von meinem skill\" – und hör Emkay antworten.\n[Etwas sagen](command:emkay.say)",
+  "walk.test.title": "Testen",
+  "walk.test.description": "Die Testsätze in test/end2end/ werden einer nach dem anderen an Emkay geschickt; jeder muss deinen Skill erreichen. Dieselben Tests wie im Emkay-Store und in ovos-tui-client.\n[Testen](command:emkay.test)",
+  "cfg.templates": "Wo *Emkay: Neuer Skill* seine Vorlagen findet (`index.json` und eine Datei pro Vorlage). Erstellt von [emkay-voice/dev](https://github.com/emkay-voice/dev) aus dessen `templates.json`."
+}

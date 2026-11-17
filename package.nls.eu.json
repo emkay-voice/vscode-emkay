@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Ireki Emkay",
+  "cmd.newSkill": "Skill berria…",
+  "cmd.run": "Exekutatu skilla Emkayn",
+  "cmd.say": "Esan zerbait Emkayri…",
+  "cmd.test": "Probatu skilla (golden utterances)",
+  "cmd.stop": "Gelditu skilla Emkayn",
+  "cmd.showLog": "Erakutsi Emkayren erregistroa",
+  "cfg.url": "Zure skilla exekutatzen den Emkay. `https://app.emkay.ai/` bertsio berriena da; zure etxeko Emkay batek (Emkay Home) edo `http://localhost:8080/`-k ere balio dute. Emkay `?dev`-ekin irekitzen da.",
+  "cfg.reloadOnSave": "Exekutatu skilla berriro Emkayn bere fitxategietako bat gordetzen duzun bakoitzean.",
+  "cfg.busLog": "Erakutsi Emkayren buseko mezu guztiak ere (\"Emkay bus\" irteera). Zer gertatzen den zehazki ikusteko erabilgarria; testu asko.",
+  "walk.title": "Egin zure lehen ahots-skilla",
+  "walk.description": "Ezer ez izatetik Emkayk erantzun arte, lau urrats txikitan – ezer instalatu gabe, dena hemen dabil.",
+  "walk.new.title": "Egin skill bat",
+  "walk.new.description": "Skill bat fitxategi txiki gutxi batzuk dira: esaten dituzun esaldiak, Emkayk erantzuten duena eta Python pixka bat.\n[Egin skill bat](command:emkay.newSkill)",
+  "walk.run.title": "Exekutatu Emkayn",
+  "walk.run.description": "Emkay zure kodearen ondoan irekitzen da eta zure skilla kargatzen du. Gero, gordetzen duzun bakoitzean bertsio berria dabil.\n[Exekutatu](command:emkay.run)",
+  "walk.say.title": "Hitz egin harekin",
+  "walk.say.description": "Idatzi esango zenukeena – \"kaixo nire skilletik\" – eta entzun Emkayren erantzuna.\n[Esan zerbait](command:emkay.say)",
+  "walk.test.title": "Probatu",
+  "walk.test.description": "test/end2end/-eko proba-esaldiak banan-banan bidaltzen zaizkio Emkayri; bakoitzak zure skillera iritsi behar du. Emkay dendaren eta ovos-tui-client-en proba berberak.\n[Probatu](command:emkay.test)",
+  "cfg.templates": "Non aurkitzen dituen *Emkay: Skill berria*-k txantiloiak (`index.json` eta fitxategi bat txantiloi bakoitzeko). [emkay-voice/dev](https://github.com/emkay-voice/dev)-ek sortzen du bere `templates.json`-etik."
+}

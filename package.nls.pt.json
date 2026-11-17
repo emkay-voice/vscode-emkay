@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Abrir o Emkay",
+  "cmd.newSkill": "Nova skill…",
+  "cmd.run": "Correr a skill no Emkay",
+  "cmd.say": "Dizer algo ao Emkay…",
+  "cmd.test": "Testar a skill (golden utterances)",
+  "cmd.stop": "Parar a skill no Emkay",
+  "cmd.showLog": "Mostrar o registo do Emkay",
+  "cfg.url": "O Emkay em que a sua skill corre. `https://app.emkay.ai/` é a versão mais recente; um Emkay da sua casa (Emkay Home) ou `http://localhost:8080/` também servem. O Emkay é aberto com `?dev`.",
+  "cfg.reloadOnSave": "Correr a skill outra vez no Emkay sempre que guarda um dos seus ficheiros.",
+  "cfg.busLog": "Mostrar também cada mensagem no barramento do Emkay (saída \"Emkay bus\"). Útil para ver exatamente o que acontece; muito texto.",
+  "walk.title": "Crie a sua primeira skill de voz",
+  "walk.description": "Do nada até o Emkay lhe responder, em quatro pequenos passos – nada para instalar, tudo corre aqui.",
+  "walk.new.title": "Criar uma skill",
+  "walk.new.description": "Uma skill são alguns ficheiros pequenos: as frases que diz, o que o Emkay responde e um pouco de Python.\n[Criar uma skill](command:emkay.newSkill)",
+  "walk.run.title": "Corrê-la no Emkay",
+  "walk.run.description": "O Emkay abre ao lado do seu código e carrega a sua skill. Depois, sempre que guarda, corre a nova versão.\n[Corrê-la](command:emkay.run)",
+  "walk.say.title": "Falar com ela",
+  "walk.say.description": "Escreva o que diria – \"olá da minha skill\" – e ouça o Emkay responder.\n[Dizer algo](command:emkay.say)",
+  "walk.test.title": "Testá-la",
+  "walk.test.description": "As frases de teste em test/end2end/ são enviadas ao Emkay uma a uma; cada uma tem de chegar à sua skill. Os mesmos testes da loja do Emkay e do ovos-tui-client.\n[Testá-la](command:emkay.test)",
+  "cfg.templates": "Onde *Emkay: Nova skill* encontra os modelos (`index.json` e um ficheiro por modelo). Feito por [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir do seu `templates.json`."
+}

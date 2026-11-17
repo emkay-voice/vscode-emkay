@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Ouvrir Emkay",
+  "cmd.newSkill": "Nouvelle skill…",
+  "cmd.run": "Lancer la skill dans Emkay",
+  "cmd.say": "Dire quelque chose à Emkay…",
+  "cmd.test": "Tester la skill (golden utterances)",
+  "cmd.stop": "Arrêter la skill dans Emkay",
+  "cmd.showLog": "Afficher le journal d'Emkay",
+  "cfg.url": "L'Emkay dans lequel tourne votre skill. `https://app.emkay.ai/` est la version la plus récente ; un Emkay de votre maison (Emkay Home) ou `http://localhost:8080/` fonctionnent aussi. Emkay est ouvert avec `?dev`.",
+  "cfg.reloadOnSave": "Relancer la skill dans Emkay à chaque enregistrement d'un de ses fichiers.",
+  "cfg.busLog": "Afficher aussi chaque message du bus d'Emkay (sortie \"Emkay bus\"). Pratique pour voir exactement ce qui se passe ; beaucoup de texte.",
+  "walk.title": "Créez votre première skill vocale",
+  "walk.description": "De rien à Emkay qui vous répond, en quatre petites étapes – rien à installer, tout tourne ici.",
+  "walk.new.title": "Créer une skill",
+  "walk.new.description": "Une skill, ce sont quelques petits fichiers : les phrases que vous dites, ce qu'Emkay répond, et un peu de Python.\n[Créer une skill](command:emkay.newSkill)",
+  "walk.run.title": "La lancer dans Emkay",
+  "walk.run.description": "Emkay s'ouvre à côté de votre code et charge votre skill. Ensuite, chaque enregistrement lance la nouvelle version.\n[La lancer](command:emkay.run)",
+  "walk.say.title": "Lui parler",
+  "walk.say.description": "Tapez ce que vous diriez – \"bonjour de ma skill\" – et entendez Emkay répondre.\n[Dire quelque chose](command:emkay.say)",
+  "walk.test.title": "La tester",
+  "walk.test.description": "Les phrases de test de test/end2end/ sont envoyées à Emkay une par une ; chacune doit atteindre votre skill. Les mêmes tests que la boutique Emkay et ovos-tui-client.\n[La tester](command:emkay.test)",
+  "cfg.templates": "Où *Emkay : Nouvelle skill* trouve ses modèles (`index.json` et un fichier par modèle). Créé par [emkay-voice/dev](https://github.com/emkay-voice/dev) à partir de son `templates.json`."
+}

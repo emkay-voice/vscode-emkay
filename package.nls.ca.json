@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Obre l'Emkay",
+  "cmd.newSkill": "Skill nova…",
+  "cmd.run": "Executa la skill a l'Emkay",
+  "cmd.say": "Digues alguna cosa a l'Emkay…",
+  "cmd.test": "Prova la skill (golden utterances)",
+  "cmd.stop": "Atura la skill a l'Emkay",
+  "cmd.showLog": "Mostra el registre de l'Emkay",
+  "cfg.url": "L'Emkay on funciona la teva skill. `https://app.emkay.ai/` és la versió més nova; també serveixen un Emkay de casa (Emkay Home) o `http://localhost:8080/`. L'Emkay s'obre amb `?dev`.",
+  "cfg.reloadOnSave": "Torna a executar la skill a l'Emkay cada vegada que deses un dels seus fitxers.",
+  "cfg.busLog": "Mostra també cada missatge del bus de l'Emkay (sortida \"Emkay bus\"). Útil per veure exactament què passa; molt de text.",
+  "walk.title": "Fes la teva primera skill de veu",
+  "walk.description": "De res a l'Emkay responent-te, en quatre passos petits – res a instal·lar, tot funciona aquí.",
+  "walk.new.title": "Fes una skill",
+  "walk.new.description": "Una skill són uns quants fitxers petits: les frases que dius, el que respon l'Emkay i una mica de Python.\n[Fes una skill](command:emkay.newSkill)",
+  "walk.run.title": "Executa-la a l'Emkay",
+  "walk.run.description": "L'Emkay s'obre al costat del teu codi i carrega la teva skill. Després, cada vegada que deses, funciona la versió nova.\n[Executa-la](command:emkay.run)",
+  "walk.say.title": "Parla-hi",
+  "walk.say.description": "Escriu el que diries – \"hola des de la meva skill\" – i escolta la resposta de l'Emkay.\n[Digues alguna cosa](command:emkay.say)",
+  "walk.test.title": "Prova-la",
+  "walk.test.description": "Les frases de prova de test/end2end/ s'envien a l'Emkay una a una; cadascuna ha d'arribar a la teva skill. Les mateixes proves que la botiga de l'Emkay i l'ovos-tui-client.\n[Prova-la](command:emkay.test)",
+  "cfg.templates": "On troba *Emkay: Skill nova* les plantilles (`index.json` i un fitxer per plantilla). El genera [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir del seu `templates.json`."
+}
