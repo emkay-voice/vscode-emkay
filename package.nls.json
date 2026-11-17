@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Open Emkay",
+  "cmd.newSkill": "New skill…",
+  "cmd.run": "Run the skill in Emkay",
+  "cmd.say": "Say something to Emkay…",
+  "cmd.test": "Test the skill (golden utterances)",
+  "cmd.stop": "Stop the skill in Emkay",
+  "cmd.showLog": "Show Emkay's log",
+  "cfg.url": "The Emkay to run your skill in. `https://app.emkay.ai/` is the newest build; an Emkay served from your house (Emkay Home) or `http://localhost:8080/` work too. Emkay is opened with `?dev`.",
+  "cfg.reloadOnSave": "Run the skill again in Emkay each time you save one of its files.",
+  "cfg.busLog": "Also show every message on Emkay's bus (the \"Emkay bus\" output). Handy to see exactly what happens; a lot of text.",
+  "walk.title": "Make your first voice skill",
+  "walk.description": "From nothing to Emkay answering you, in four small steps – no installing, it all runs here.",
+  "walk.new.title": "Make a skill",
+  "walk.new.description": "A skill is a few small files: the sentences you say, what Emkay answers, and a little Python.\n[Make a skill](command:emkay.newSkill)",
+  "walk.run.title": "Run it in Emkay",
+  "walk.run.description": "Emkay opens next to your code and loads your skill. After this, every save runs the new version.\n[Run it](command:emkay.run)",
+  "walk.say.title": "Talk to it",
+  "walk.say.description": "Type what you would say – \"hello from my skill\" – and hear Emkay answer.\n[Say something](command:emkay.say)",
+  "walk.test.title": "Test it",
+  "walk.test.description": "The test sentences in test/end2end/ are sent to Emkay one by one; each must reach your skill. The same tests the Emkay store and ovos-tui-client run.\n[Test it](command:emkay.test)",
+  "cfg.templates": "Where *Emkay: New skill* finds its templates (`index.json` and one file per template). Made by [emkay-voice/dev](https://github.com/emkay-voice/dev) from its `templates.json`."
+}

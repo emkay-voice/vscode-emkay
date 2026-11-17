@@ -1,0 +1,194 @@
+{
+  "name": "emkay-dev",
+  "displayName": "Emkay Dev",
+  "description": "Write an OpenVoiceOS skill and talk to it at once: Emkay runs next to your code, in VS Code – also in the browser (vscode.dev, github.dev).",
+  "version": "0.1.0",
+  "publisher": "emkay-voice",
+  "license": "Apache-2.0",
+  "icon": "media/icon.png",
+  "homepage": "https://dev.emkay.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emkay-voice/vscode-emkay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emkay-voice/vscode-emkay/issues"
+  },
+  "keywords": [
+    "openvoiceos",
+    "ovos",
+    "voice assistant",
+    "skill",
+    "emkay",
+    "mycroft"
+  ],
+  "categories": [
+    "Other",
+    "Testing"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "l10n": "./l10n",
+  "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
+  "activationEvents": [
+    "workspaceContains:**/locale/**/*.intent",
+    "workspaceContains:**/locale/**/*.dialog",
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "emkay.open",
+        "title": "%cmd.open%",
+        "category": "Emkay",
+        "icon": "$(comment-discussion)"
+      },
+      {
+        "command": "emkay.newSkill",
+        "title": "%cmd.newSkill%",
+        "category": "Emkay",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "emkay.run",
+        "title": "%cmd.run%",
+        "category": "Emkay",
+        "icon": "$(play)"
+      },
+      {
+        "command": "emkay.say",
+        "title": "%cmd.say%",
+        "category": "Emkay",
+        "icon": "$(comment)"
+      },
+      {
+        "command": "emkay.test",
+        "title": "%cmd.test%",
+        "category": "Emkay",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "emkay.stop",
+        "title": "%cmd.stop%",
+        "category": "Emkay",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "emkay.showLog",
+        "title": "%cmd.showLog%",
+        "category": "Emkay",
+        "icon": "$(output)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "emkay.run",
+          "when": "emkay.isSkill",
+          "group": "navigation@90"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "emkay.run",
+        "key": "ctrl+alt+e",
+        "mac": "cmd+alt+e",
+        "when": "emkay.isSkill"
+      },
+      {
+        "command": "emkay.say",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "emkay.isSkill"
+      }
+    ],
+    "configuration": {
+      "title": "Emkay Dev",
+      "properties": {
+        "emkay.url": {
+          "type": "string",
+          "default": "https://app.emkay.ai/",
+          "markdownDescription": "%cfg.url%"
+        },
+        "emkay.reloadOnSave": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%cfg.reloadOnSave%"
+        },
+        "emkay.busLog": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%cfg.busLog%"
+        },
+        "emkay.templates": {
+          "type": "string",
+          "default": "https://dev.emkay.ai/templates/",
+          "markdownDescription": "%cfg.templates%"
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "emkay.start",
+        "title": "%walk.title%",
+        "description": "%walk.description%",
+        "steps": [
+          {
+            "id": "new",
+            "title": "%walk.new.title%",
+            "description": "%walk.new.description%",
+            "media": {
+              "markdown": "media/walk.md"
+            },
+            "completionEvents": [
+              "onCommand:emkay.newSkill"
+            ]
+          },
+          {
+            "id": "run",
+            "title": "%walk.run.title%",
+            "description": "%walk.run.description%",
+            "media": {
+              "markdown": "media/walk.md"
+            },
+            "completionEvents": [
+              "onCommand:emkay.run"
+            ]
+          },
+          {
+            "id": "say",
+            "title": "%walk.say.title%",
+            "description": "%walk.say.description%",
+            "media": {
+              "markdown": "media/walk.md"
+            },
+            "completionEvents": [
+              "onCommand:emkay.say"
+            ]
+          },
+          {
+            "id": "test",
+            "title": "%walk.test.title%",
+            "description": "%walk.test.description%",
+            "media": {
+              "markdown": "media/walk.md"
+            },
+            "completionEvents": [
+              "onCommand:emkay.test"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "sync-template": "node tools/sync-template.mjs ../emkay-skill-template",
+    "build": "node tools/build.mjs",
+    "vscode:prepublish": "node tools/build.mjs",
+    "package": "npx --yes @vscode/vsce package --no-dependencies"
+  },
+  "author": "Andreas Lorensen"
+}

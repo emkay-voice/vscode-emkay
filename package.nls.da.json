@@ -1,0 +1,23 @@
+{
+  "cmd.open": "Åbn Emkay",
+  "cmd.newSkill": "Ny skill…",
+  "cmd.run": "Kør skill'en i Emkay",
+  "cmd.say": "Sig noget til Emkay…",
+  "cmd.test": "Test skill'en (golden utterances)",
+  "cmd.stop": "Stop skill'en i Emkay",
+  "cmd.showLog": "Vis Emkays log",
+  "cfg.url": "Den Emkay, din skill kører i. `https://app.emkay.ai/` er den nyeste udgave; en Emkay fra dit hus (Emkay Home) eller `http://localhost:8080/` virker også. Emkay åbnes med `?dev`.",
+  "cfg.reloadOnSave": "Kør skill'en igen i Emkay, hver gang du gemmer en af dens filer.",
+  "cfg.busLog": "Vis også alle beskeder på Emkays bus (\"Emkay bus\" under Output). Godt til at se præcis hvad der sker; meget tekst.",
+  "walk.title": "Lav din første stemme-skill",
+  "walk.description": "Fra ingenting til at Emkay svarer dig, i fire små trin – intet at installere, det hele kører her.",
+  "walk.new.title": "Lav en skill",
+  "walk.new.description": "En skill er nogle få små filer: de sætninger du siger, det Emkay svarer, og lidt Python.\n[Lav en skill](command:emkay.newSkill)",
+  "walk.run.title": "Kør den i Emkay",
+  "walk.run.description": "Emkay åbner ved siden af din kode og indlæser din skill. Herefter kører hver gemning den nye udgave.\n[Kør den](command:emkay.run)",
+  "walk.say.title": "Tal med den",
+  "walk.say.description": "Skriv det du ville sige – \"hej fra min skill\" – og hør Emkay svare.\n[Sig noget](command:emkay.say)",
+  "walk.test.title": "Test den",
+  "walk.test.description": "Testsætningerne i test/end2end/ sendes til Emkay en ad gangen; hver skal nå din skill. De samme test, som Emkay-storen og ovos-tui-client kører.\n[Test den](command:emkay.test)",
+  "cfg.templates": "Hvor *Emkay: Ny skill* finder sine skabeloner (`index.json` og en fil pr. skabelon). Laves af [emkay-voice/dev](https://github.com/emkay-voice/dev) ud fra dens `templates.json`."
+}
