@@ -694,7 +694,7 @@ async function newSkill() {
   const name = await vscode.window.showInputBox({
     title: t("New skill"),
     prompt: t("What is your skill about? A few words, e.g. \"coffee facts\""),
-    value: "hello",
+    value: tpl.id === "skill" || !tpl.id ? "hello" : tpl.id,
     validateInput: (v) => /^[A-Za-z0-9][A-Za-z0-9 _-]{0,40}$/.test(v.trim()) ? null : t("Letters, numbers, spaces and dashes"),
   });
   if (!name) return;
@@ -732,7 +732,7 @@ async function newSkill() {
   if (main) await vscode.window.showTextDocument(vscode.Uri.joinPath(ws.uri, main), { preview: false, viewColumn: vscode.ViewColumn.One });
   if (intent) await vscode.window.showTextDocument(vscode.Uri.joinPath(ws.uri, intent), { preview: false, viewColumn: vscode.ViewColumn.One });
   await updateContext();
-  if (tpl.builtIn || tpl.id === "skill") {
+  if (tpl.builtIn || tpl.kind === "skill" || tpl.id === "skill") {
     const first = intent ? firstOption(new TextDecoder().decode(files[intent]).split(/\r?\n/).find((l) => l.trim() && !l.startsWith("#")) || "") : "";
     vscode.window.showInformationMessage(t("Your skill is made. Emkay starts next to it now – then type \"{0}\" below Emkay.", first || template.firstSentence(name.trim(), vscode.env.language)));
   } else {
