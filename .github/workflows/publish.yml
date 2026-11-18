@@ -37,4 +37,6 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" *.vsix --title "Emkay Dev $GITHUB_REF_NAME" --notes "See CHANGELOG.md. On the VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=emkay-voice.emkay-dev"
+        run: |
+          gh release create "$GITHUB_REF_NAME" *.vsix --title "Emkay Dev $GITHUB_REF_NAME" \
+            --notes "See CHANGELOG.md. On the VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=emkay-voice.emkay-dev"
