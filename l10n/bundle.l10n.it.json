@@ -39,5 +39,8 @@
   "Could not fetch the template ({0}).": "Impossibile scaricare il modello ({0}).",
   "What kind of skill?": "Che tipo di skill?",
   "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "La tua skill è creata da {0}. Emkay si avvia accanto ora; il README del modello dice cosa provare.",
-  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Provo le frasi in {0}, la lingua che parla Emkay; cambia la lingua di Emkay nelle sue impostazioni per provarne un'altra."
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Provo le frasi in {0}, la lingua che parla Emkay; cambia la lingua di Emkay nelle sue impostazioni per provarne un'altra.",
+  "Emkay speaks {0}. Try saying: {1}": "Emkay parla {0}. Prova a dire: {1}",
+  "Your skill has no sentences in {0}, the language Emkay speaks. Add locale/{0}/, or change Emkay's language in its settings.": "La tua skill non ha frasi in {0}, la lingua che parla Emkay. Aggiungi locale/{0}/ oppure cambia la lingua di Emkay nelle impostazioni.",
+  "e.g. {0}": "ad es. {0}"
 }

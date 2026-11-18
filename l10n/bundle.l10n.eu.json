@@ -39,5 +39,8 @@
   "Could not fetch the template ({0}).": "Ezin izan da txantiloia eskuratu ({0}).",
   "What kind of skill?": "Zer motatako skilla?",
   "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Zure skilla {0}-tik egin da. Emkay ondoan abiatzen da orain; txantiloiaren README-ak dio zer probatu.",
-  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "{0} hizkuntzako esaldiak probatzen, Emkayk hitz egiten duena; aldatu Emkayren hizkuntza ezarpenetan beste bat probatzeko."
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "{0} hizkuntzako esaldiak probatzen, Emkayk hitz egiten duena; aldatu Emkayren hizkuntza ezarpenetan beste bat probatzeko.",
+  "Emkay speaks {0}. Try saying: {1}": "Emkayk {0} hitz egiten du. Saiatu esaten: {1}",
+  "Your skill has no sentences in {0}, the language Emkay speaks. Add locale/{0}/, or change Emkay's language in its settings.": "Zure skillak ez du esaldirik {0} hizkuntzan, Emkayk hitz egiten duenean. Gehitu locale/{0}/, edo aldatu Emkayren hizkuntza ezarpenetan.",
+  "e.g. {0}": "adib. {0}"
 }

@@ -131,6 +131,28 @@ async function filesOf(folder) {
   return files;
 }
 
+/**
+ * A few sentences the skill answers in Emkay's language: the first line of
+ * each locale/<lang>/*.intent, with padatious' (a|b) reduced to a.
+ * @returns {Promise<string[] | null>} null when the skill has no folder for that language
+ */
+async function exampleSentences(folder, lang) {
+  const locale = vscode.Uri.joinPath(folder, "locale");
+  let dirs = [];
+  try { dirs = (await vscode.workspace.fs.readDirectory(locale)).filter(([, ty]) => ty & vscode.FileType.Directory).map(([n]) => n); } catch { return null; }
+  const want = lang.toLowerCase(), base = want.split("-")[0];
+  const dir = dirs.find((d) => d.toLowerCase() === want) || dirs.find((d) => d.toLowerCase().split("-")[0] === base);
+  if (!dir) return null;
+  const out = [];
+  for (const [name] of await vscode.workspace.fs.readDirectory(vscode.Uri.joinPath(locale, dir))) {
+    if (!name.endsWith(".intent")) continue;
+    const text = (await readText(vscode.Uri.joinPath(locale, dir, name))) || "";
+    const line = text.split(/\r?\n/).map((l) => l.trim()).find((l) => l && !l.startsWith("#"));
+    if (line) out.push(line.replace(/\(([^|()]*)(\|[^()]*)?\)/g, "$1").replace(/\s+/g, " ").trim());
+  }
+  return out.slice(0, 3);
+}
+
 /** The skill's golden utterances: test/end2end/golden_utterances_<lang>.jsonl. */
 async function goldenRows(skill) {
   const dir = vscode.Uri.joinPath(skill.root, "test", "end2end");
@@ -217,6 +239,8 @@ class Panel {
         ready = true; clearInterval(hello); document.getElementById("note").hidden = true;
       }
       vscode.postMessage(e.data);
+    } else if (e.data && e.data.hint) {
+      document.getElementById("q").placeholder = e.data.hint;
     } else if (e.data && e.data.toEmkay) {
       frame.contentWindow.postMessage({ emkayDev: 1, ...e.data.toEmkay }, ORIGIN);
     }
@@ -331,6 +355,17 @@ async function run(context, { quiet = false } = {}) {
     if (r.ok) {
       out.appendLine(t("✓ {0} runs in Emkay ({1} s). Intents: {2}", skill.skillId, r.seconds, (r.intents || []).join(", ") || "–"));
       if (!quiet) vscode.window.setStatusBarMessage(t("✓ {0} runs in Emkay", skill.skillId), 4000);
+      // what to say: in the language Emkay speaks, which is easy to get wrong
+      if (p.lang) {
+        const examples = await exampleSentences(skill.folder, p.lang);
+        if (examples === null) {
+          out.appendLine("⚠ " + t("Your skill has no sentences in {0}, the language Emkay speaks. Add locale/{0}/, or change Emkay's language in its settings.", p.lang));
+          out.show(true);
+        } else if (examples.length) {
+          out.appendLine("💬 " + t("Emkay speaks {0}. Try saying: {1}", p.lang, examples.map((e) => `"${e}"`).join(" · ")));
+          p.view.webview.postMessage({ hint: t("e.g. {0}", examples[0]) });
+        }
+      }
     } else {
       out.appendLine(t("✗ {0} did not load:", skill.skillId));
       for (const p of r.problems || []) out.appendLine("   " + p);

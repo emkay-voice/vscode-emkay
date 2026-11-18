@@ -39,5 +39,8 @@
   "Could not fetch the template ({0}).": "Kunne ikke hente skabelonen ({0}).",
   "What kind of skill?": "Hvilken slags skill?",
   "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Din skill er lavet ud fra {0}. Emkay starter ved siden af nu; skabelonens README fortæller, hvad du kan prøve.",
-  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Tester sætningerne på {0}, det sprog Emkay taler; skift Emkays sprog i dens indstillinger for at teste et andet."
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Tester sætningerne på {0}, det sprog Emkay taler; skift Emkays sprog i dens indstillinger for at teste et andet.",
+  "Emkay speaks {0}. Try saying: {1}": "Emkay taler {0}. Prøv at sige: {1}",
+  "Your skill has no sentences in {0}, the language Emkay speaks. Add locale/{0}/, or change Emkay's language in its settings.": "Din skill har ingen sætninger på {0}, det sprog Emkay taler. Tilføj locale/{0}/, eller skift Emkays sprog i dens indstillinger.",
+  "e.g. {0}": "f.eks. {0}"
 }
