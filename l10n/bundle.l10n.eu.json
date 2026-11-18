@@ -38,5 +38,6 @@
   "{0} skipped: not in the language Emkay speaks ({1}).": "{0} saltatuta: ez daude Emkayk hitz egiten duen hizkuntzan ({1}).",
   "Could not fetch the template ({0}).": "Ezin izan da txantiloia eskuratu ({0}).",
   "What kind of skill?": "Zer motatako skilla?",
-  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Zure skilla {0}-tik egin da. Emkay ondoan abiatzen da orain; txantiloiaren README-ak dio zer probatu."
+  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Zure skilla {0}-tik egin da. Emkay ondoan abiatzen da orain; txantiloiaren README-ak dio zer probatu.",
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "{0} hizkuntzako esaldiak probatzen, Emkayk hitz egiten duena; aldatu Emkayren hizkuntza ezarpenetan beste bat probatzeko."
 }

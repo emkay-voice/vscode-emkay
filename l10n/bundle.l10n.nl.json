@@ -38,5 +38,6 @@
   "{0} skipped: not in the language Emkay speaks ({1}).": "{0} overgeslagen: niet in de taal die Emkay spreekt ({1}).",
   "Could not fetch the template ({0}).": "Kon het sjabloon niet ophalen ({0}).",
   "What kind of skill?": "Wat voor skill?",
-  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Je skill is gemaakt van {0}. Emkay start er nu naast; de README van het sjabloon zegt wat je kunt proberen."
+  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Je skill is gemaakt van {0}. Emkay start er nu naast; de README van het sjabloon zegt wat je kunt proberen.",
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Test de zinnen in het {0}, de taal die Emkay spreekt; verander de taal van Emkay in zijn instellingen om een andere te testen."
 }

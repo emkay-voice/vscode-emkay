@@ -393,6 +393,16 @@ async function runTests(request, token, context) {
   (request.include || [...gather(tests.items)]).forEach(add);
   if (!panel || !lastRun) await vscode.commands.executeCommand("emkay.run");
   if (!panel) { run.end(); return; }
+  // "test everything": the sentences of the language Emkay speaks (padatious
+  // has learned only those); a language picked in the Testing view still runs
+  if (!request.include && panel.lang) {
+    const mine = (l) => String(l).split("-")[0].toLowerCase() === panel.lang.split("-")[0].toLowerCase();
+    const others = queue.filter((item) => !mine(item.row.lang)).length;
+    if (others && others < queue.length) {
+      queue.splice(0, queue.length, ...queue.filter((item) => mine(item.row.lang)));
+      out.appendLine(t("Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.", panel.lang));
+    }
+  }
   out.appendLine(t("Testing {0} sentences…", queue.length));
   let passed = 0, skipped = 0;
   for (const item of queue) {

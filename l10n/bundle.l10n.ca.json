@@ -38,5 +38,6 @@
   "{0} skipped: not in the language Emkay speaks ({1}).": "{0} omeses: no són en l'idioma que parla l'Emkay ({1}).",
   "Could not fetch the template ({0}).": "No s'ha pogut obtenir la plantilla ({0}).",
   "What kind of skill?": "Quin tipus de skill?",
-  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "La teva skill s'ha fet a partir de {0}. L'Emkay s'engega ara al costat; el README de la plantilla diu què provar."
+  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "La teva skill s'ha fet a partir de {0}. L'Emkay s'engega ara al costat; el README de la plantilla diu què provar.",
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Provant les frases en {0}, l'idioma que parla l'Emkay; canvia l'idioma de l'Emkay a la configuració per provar-ne un altre."
 }

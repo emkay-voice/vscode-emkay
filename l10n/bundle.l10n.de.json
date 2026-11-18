@@ -38,5 +38,6 @@
   "{0} skipped: not in the language Emkay speaks ({1}).": "{0} übersprungen: nicht in der Sprache, die Emkay spricht ({1}).",
   "Could not fetch the template ({0}).": "Die Vorlage konnte nicht geladen werden ({0}).",
   "What kind of skill?": "Was für ein Skill?",
-  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Dein Skill ist aus {0} entstanden. Emkay startet jetzt daneben; das README der Vorlage sagt, was du ausprobieren kannst."
+  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Dein Skill ist aus {0} entstanden. Emkay startet jetzt daneben; das README der Vorlage sagt, was du ausprobieren kannst.",
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Teste die Sätze auf {0}, der Sprache, die Emkay spricht; ändere Emkays Sprache in seinen Einstellungen, um eine andere zu testen."
 }

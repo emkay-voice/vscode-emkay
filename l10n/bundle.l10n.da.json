@@ -38,5 +38,6 @@
   "{0} skipped: not in the language Emkay speaks ({1}).": "{0} sprunget over: ikke på det sprog, Emkay taler ({1}).",
   "Could not fetch the template ({0}).": "Kunne ikke hente skabelonen ({0}).",
   "What kind of skill?": "Hvilken slags skill?",
-  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Din skill er lavet ud fra {0}. Emkay starter ved siden af nu; skabelonens README fortæller, hvad du kan prøve."
+  "Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.": "Din skill er lavet ud fra {0}. Emkay starter ved siden af nu; skabelonens README fortæller, hvad du kan prøve.",
+  "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Tester sætningerne på {0}, det sprog Emkay taler; skift Emkays sprog i dens indstillinger for at teste et andet."
 }
