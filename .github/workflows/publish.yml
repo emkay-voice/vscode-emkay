@@ -1,0 +1,40 @@
+# Publish Emkay Dev on the VS Code Marketplace when a version tag is pushed
+# (v0.1.0, v0.2.0, ...), and attach the .vsix to a GitHub release.
+#
+# No token: the Marketplace's Trusted Publishing (GitHub OIDC). The publisher
+# "emkay-voice" has a policy for this repository and this workflow file
+# (marketplace.visualstudio.com/manage -> the publisher -> Trusted publishing).
+# The tag must match the version in package.json.
+name: Publish
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # the GitHub release
+  id-token: write   # Trusted Publishing
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: The tag is the version
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          v=$(node -p "require('./package.json').version")
+          [ "v$v" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME but package.json says $v"; exit 1; }
+      - run: node tools/build.mjs
+      - run: npx --yes @vscode/vsce package --no-dependencies
+      - name: VS Code Marketplace
+        run: npx --yes @vscode/vsce publish --no-dependencies --oidc --packagePath *.vsix
+      - name: GitHub release with the .vsix
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" *.vsix --title "Emkay Dev $GITHUB_REF_NAME" --notes "See CHANGELOG.md. On the VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=emkay-voice.emkay-dev"

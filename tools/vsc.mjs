@@ -17,14 +17,14 @@ if (what === "start") {
   const c = spawn(process.env.CHROME, [
     "--headless=new", `--remote-debugging-port=${port}`, "--user-data-dir=/tmp/chrome-vsc",
     "--window-size=1600,1000", "--autoplay-policy=no-user-gesture-required", "--no-first-run",
-    "http://localhost:3000/"], { stdio: "ignore", detached: true });
+    process.env.VSC_URL || "http://localhost:3000/"], { stdio: "ignore", detached: true });
   c.unref();
   console.log("started");
   process.exit(0);
 }
 
 const targets = await (await fetch(`http://127.0.0.1:${port}/json`)).json();
-const page = targets.find((t) => t.type === "page" && t.url.includes("localhost:3000"));
+const page = targets.find((t) => t.type === "page" && t.url.includes(process.env.VSC_MATCH || "localhost:3000"));
 const ws = new WebSocket(page.webSocketDebuggerUrl);
 await new Promise((r) => (ws.onopen = r));
 let id = 0;

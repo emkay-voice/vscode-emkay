@@ -1,0 +1,7 @@
+tools/**
+node_modules/**
+.vscode-test-web/**
+extension.js
+template.js
+*.vsix
+.github/**
