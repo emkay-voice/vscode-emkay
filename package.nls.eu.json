@@ -19,5 +19,6 @@
   "walk.say.description": "Idatzi esango zenukeena – \"kaixo nire skilletik\" – eta entzun Emkayren erantzuna.\n[Esan zerbait](command:emkay.say)",
   "walk.test.title": "Probatu",
   "walk.test.description": "test/end2end/-eko proba-esaldiak banan-banan bidaltzen zaizkio Emkayri; bakoitzak zure skillera iritsi behar du. Emkay dendaren eta ovos-tui-client-en proba berberak.\n[Probatu](command:emkay.test)",
-  "cfg.templates": "Non aurkitzen dituen *Emkay: Skill berria*-k txantiloiak (`index.json` eta fitxategi bat txantiloi bakoitzeko). [emkay-voice/dev](https://github.com/emkay-voice/dev)-ek sortzen du bere `templates.json`-etik."
+  "cfg.templates": "Non aurkitzen dituen *Emkay: Skill berria*-k txantiloiak (`index.json` eta fitxategi bat txantiloi bakoitzeko). [emkay-voice/dev](https://github.com/emkay-voice/dev)-ek sortzen du bere `templates.json`-etik.",
+  "cmd.send": "Bidali nire Emkayra (QR kodea)"
 }

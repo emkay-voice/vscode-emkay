@@ -5,3 +5,4 @@ extension.js
 template.js
 *.vsix
 .github/**
+vendor/**

@@ -45,5 +45,16 @@
   "e.g. {0}": "bijv. {0}",
   "Test it: the beaker (Testing) in the bar on the left, or Ctrl+Shift+P → Emkay: Test the skill.": "Test hem: de kolf (Testen) in de balk links, of Ctrl+Shift+P → Emkay: De skill testen.",
   "✓ {0} runs in Emkay. Its test sentences are in the Testing view.": "✓ {0} draait in Emkay. De testzinnen staan in de testweergave.",
-  "Open tests": "Tests openen"
+  "Open tests": "Tests openen",
+  "Send to my Emkay": "Naar mijn Emkay sturen",
+  "Publish to GitHub": "Publiceren op GitHub",
+  "How?": "Hoe?",
+  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "Je skill moet eerst op GitHub staan: de Emkay op je telefoon haalt hem daar op.",
+  "Send anyway": "Toch sturen",
+  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "Je hebt wijzigingen die nog niet op GitHub staan ({0}). Je telefoon krijgt wat op GitHub staat – eerst committen en pushen (Synchroniseren).",
+  "Scan this with your phone's camera.": "Scan dit met de camera van je telefoon.",
+  "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "Emkay opent en toont je skill. Tik op Installeren – hij blijft op die Emkay, en Bijwerken onder menu → Van GitHub haalt je nieuwste versie.",
+  "Copy link": "Link kopiëren",
+  "Copied": "Gekopieerd",
+  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "De repository moet openbaar zijn, en alleen wat je naar GitHub hebt gepusht gaat naar de telefoon."
 }

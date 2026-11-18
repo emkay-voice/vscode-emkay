@@ -7,11 +7,13 @@
 // its log, its bus and the verdicts. See web/dev.js in emkay-voice/emkay for
 // Emkay's side.
 //
-// Plain JavaScript, the VS Code API only and no dependencies, so the same
+// Plain JavaScript and the VS Code API (plus vendor/qrcode.js for the QR
+// code, MIT), no npm dependencies, so the same
 // file runs in VS Code on a PC (Node) and in the browser (vscode.dev,
 // github.dev; a web worker).
 const vscode = require("vscode");
 const template = require("./template.js");
+const qrcode = require("./vendor/qrcode.js");   // qrcode-generator 1.4.4 (MIT, Kazuhiko Arase)
 
 const t = (msg, ...args) => vscode.l10n.t(msg, ...args);
 
@@ -442,6 +444,119 @@ async function stop() {
   lastRun = null;
 }
 
+// ------------------------------------------------------- send to my Emkay
+
+/**
+ * The workspace's GitHub repo: {owner, repo, ref}, or null. In vscode.dev
+ * with a GitHub repo open (vscode-vfs://github/owner/repo) from the folder's
+ * address; in a clone (Codespaces, VS Code on a PC) from .git/config's origin
+ * and .git/HEAD's branch.
+ */
+async function githubOf(root) {
+  if (root.scheme === "vscode-vfs" && /github/i.test(root.authority)) {
+    const [, owner, repo] = root.path.split("/");
+    if (owner && repo) return { owner, repo: repo.replace(/\+.*$/, ""), ref: "" };
+  }
+  const config = await readText(vscode.Uri.joinPath(root, ".git", "config"));
+  const url = config && (config.match(/\[remote "origin"\][^[]*?url\s*=\s*(\S+)/) || [])[1];
+  const gh = url && url.match(/github\.com[:/]([A-Za-z0-9-]+)\/([A-Za-z0-9._-]+?)(?:\.git)?\/?$/);
+  if (!gh) return null;
+  const head = await readText(vscode.Uri.joinPath(root, ".git", "HEAD"));
+  const branch = head && ((head.match(/ref: refs\/heads\/(.+)/) || [])[1] || "").trim();
+  return { owner: gh[1], repo: gh[2], ref: branch || "" };
+}
+
+/** Files changed but not pushed, as VS Code's git sees them (null: can't tell, e.g. in vscode.dev). */
+async function unpushed(root) {
+  try {
+    const ext = vscode.extensions.getExtension("vscode.git");
+    if (!ext) return null;
+    const api = (ext.isActive ? ext.exports : await ext.activate()).getAPI(1);
+    const repo = api.repositories.find((r) => root.path.startsWith(r.rootUri.path));
+    if (!repo) return null;
+    const s = repo.state;
+    return s.workingTreeChanges.length + s.indexChanges.length + (s.HEAD?.ahead || 0);
+  } catch { return null; }
+}
+
+/**
+ * Emkay: Send to my Emkay (emkay-voice/emkay#49): a QR code and a link,
+ * app.emkay.ai/?install=github:owner/repo, that the phone's camera opens in
+ * Emkay, which shows the skill and installs it from GitHub after a tap.
+ * Only what is pushed goes, and the repo must be public: Emkay fetches it
+ * from GitHub without a login.
+ */
+async function sendToEmkay(context) {
+  const skill = await findSkill();
+  if (!skill) {
+    vscode.window.showWarningMessage(t("There is no skill in this folder yet. Make one?"), t("New skill…"))
+      .then((x) => x && vscode.commands.executeCommand("emkay.newSkill"));
+    return;
+  }
+  const gh = await githubOf(skill.root);
+  if (!gh) {
+    const publish = t("Publish to GitHub"), how = t("How?");
+    const pick = await vscode.window.showInformationMessage(
+      t("Your skill has to be on GitHub first: your phone's Emkay fetches it from there."), publish, how);
+    if (pick === publish) {
+      vscode.commands.executeCommand("github.publish").then(undefined, () =>
+        vscode.env.openExternal(vscode.Uri.parse("https://dev.emkay.ai/#github")));
+    } else if (pick === how) {
+      vscode.env.openExternal(vscode.Uri.parse("https://dev.emkay.ai/#github"));
+    }
+    return;
+  }
+  const waiting = await unpushed(skill.root);
+  if (waiting) {
+    const anyway = t("Send anyway");
+    const pick = await vscode.window.showWarningMessage(
+      t("You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.", waiting),
+      { modal: true }, anyway);
+    if (pick !== anyway) return;
+  }
+  const base = new URL(vscode.workspace.getConfiguration("emkay").get("url") || "https://app.emkay.ai/");
+  base.search = "";
+  base.searchParams.set("install", `github:${gh.owner}/${gh.repo}${gh.ref ? `@${gh.ref}` : ""}`);
+  const link = base.toString().replace("%3A", ":").replace(/%2F/g, "/").replace("%40", "@");
+  const qr = qrcode(0, "M");
+  qr.addData(link);
+  qr.make();
+  const svg = qr.createSvgTag({ cellSize: 6, margin: 3, scalable: true });
+  const view = vscode.window.createWebviewPanel("emkaySend", t("Send to my Emkay"),
+    { viewColumn: vscode.ViewColumn.Beside, preserveFocus: false }, { enableScripts: true });
+  view.iconPath = vscode.Uri.joinPath(context.extensionUri, "media", "icon.png");
+  const nonce = Math.random().toString(36).slice(2);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  view.webview.html = `<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; script-src 'nonce-${nonce}';">
+<style>
+  body { font: 14px system-ui, sans-serif; color: var(--vscode-foreground); padding: 24px; max-width: 520px; margin: auto; text-align: center; }
+  .qr { background: #fff; border-radius: 16px; padding: 12px; width: 280px; height: 280px; margin: 18px auto; }
+  .qr svg { width: 100%; height: 100%; }
+  h1 { font-weight: 400; font-size: 22px; } .repo { font-weight: 600; font-size: 16px; }
+  p { line-height: 1.5; } .small { opacity: .75; font-size: 12px; }
+  code { word-break: break-all; }
+  button { padding: 8px 16px; border: 0; border-radius: 6px; background: var(--vscode-button-background); color: var(--vscode-button-foreground); cursor: pointer; }
+</style></head><body>
+<h1>${esc(t("Send to my Emkay"))}</h1>
+<div class="repo">${esc(`${gh.owner}/${gh.repo}`)}${gh.ref ? ` · ${esc(gh.ref)}` : ""}</div>
+<div class="qr">${svg}</div>
+<p><b>${esc(t("Scan this with your phone's camera."))}</b><br>${esc(t("Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version."))}</p>
+<p><code id="link">${esc(link)}</code><br><br><button id="copy">${esc(t("Copy link"))}</button></p>
+<p class="small">${esc(t("The repository must be public, and only what you have pushed to GitHub goes to the phone."))}</p>
+<script nonce="${nonce}">
+  const vscode = acquireVsCodeApi();
+  document.getElementById("copy").onclick = () => vscode.postMessage({ copy: true });
+</script></body></html>`;
+  view.webview.onDidReceiveMessage(async (m) => {
+    if (m.copy) {
+      await vscode.env.clipboard.writeText(link);
+      vscode.window.setStatusBarMessage(t("Copied"), 3000);
+    }
+  });
+  out.appendLine("📱 " + t("Send to my Emkay") + ": " + link);
+}
+
 // ------------------------------------------------------------------ tests
 
 /** The golden utterances as VS Code tests: the Testing view, ✓ and ✗ in the file. */
@@ -660,6 +775,7 @@ function activate(context) {
   reg("emkay.newSkill", () => newSkill());
   reg("emkay.stop", () => stop());
   reg("emkay.showLog", () => out.show());
+  reg("emkay.send", () => sendToEmkay(context));
   reg("emkay.say", async (text) => {
     if (typeof text !== "string") {
       text = await vscode.window.showInputBox({ title: t("Say to Emkay"), prompt: t("Type what you would say") });

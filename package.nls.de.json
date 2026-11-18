@@ -19,5 +19,6 @@
   "walk.say.description": "Tippe, was du sagen würdest – \"hallo von meinem skill\" – und hör Emkay antworten.\n[Etwas sagen](command:emkay.say)",
   "walk.test.title": "Testen",
   "walk.test.description": "Die Testsätze in test/end2end/ werden einer nach dem anderen an Emkay geschickt; jeder muss deinen Skill erreichen. Dieselben Tests wie im Emkay-Store und in ovos-tui-client.\n[Testen](command:emkay.test)",
-  "cfg.templates": "Wo *Emkay: Neuer Skill* seine Vorlagen findet (`index.json` und eine Datei pro Vorlage). Erstellt von [emkay-voice/dev](https://github.com/emkay-voice/dev) aus dessen `templates.json`."
+  "cfg.templates": "Wo *Emkay: Neuer Skill* seine Vorlagen findet (`index.json` und eine Datei pro Vorlage). Erstellt von [emkay-voice/dev](https://github.com/emkay-voice/dev) aus dessen `templates.json`.",
+  "cmd.send": "An mein Emkay senden (QR-Code)"
 }

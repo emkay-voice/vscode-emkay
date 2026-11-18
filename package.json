@@ -70,6 +70,12 @@
         "icon": "$(beaker)"
       },
       {
+        "command": "emkay.send",
+        "title": "%cmd.send%",
+        "category": "Emkay",
+        "icon": "$(device-mobile)"
+      },
+      {
         "command": "emkay.stop",
         "title": "%cmd.stop%",
         "category": "Emkay",

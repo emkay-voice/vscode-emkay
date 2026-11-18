@@ -19,5 +19,6 @@
   "walk.say.description": "Escriu el que diries – \"hola des de la meva skill\" – i escolta la resposta de l'Emkay.\n[Digues alguna cosa](command:emkay.say)",
   "walk.test.title": "Prova-la",
   "walk.test.description": "Les frases de prova de test/end2end/ s'envien a l'Emkay una a una; cadascuna ha d'arribar a la teva skill. Les mateixes proves que la botiga de l'Emkay i l'ovos-tui-client.\n[Prova-la](command:emkay.test)",
-  "cfg.templates": "On troba *Emkay: Skill nova* les plantilles (`index.json` i un fitxer per plantilla). El genera [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir del seu `templates.json`."
+  "cfg.templates": "On troba *Emkay: Skill nova* les plantilles (`index.json` i un fitxer per plantilla). El genera [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir del seu `templates.json`.",
+  "cmd.send": "Envia al meu Emkay (codi QR)"
 }

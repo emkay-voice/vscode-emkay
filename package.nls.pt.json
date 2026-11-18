@@ -19,5 +19,6 @@
   "walk.say.description": "Escreva o que diria – \"olá da minha skill\" – e ouça o Emkay responder.\n[Dizer algo](command:emkay.say)",
   "walk.test.title": "Testá-la",
   "walk.test.description": "As frases de teste em test/end2end/ são enviadas ao Emkay uma a uma; cada uma tem de chegar à sua skill. Os mesmos testes da loja do Emkay e do ovos-tui-client.\n[Testá-la](command:emkay.test)",
-  "cfg.templates": "Onde *Emkay: Nova skill* encontra os modelos (`index.json` e um ficheiro por modelo). Feito por [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir do seu `templates.json`."
+  "cfg.templates": "Onde *Emkay: Nova skill* encontra os modelos (`index.json` e um ficheiro por modelo). Feito por [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir do seu `templates.json`.",
+  "cmd.send": "Enviar para o meu Emkay (código QR)"
 }

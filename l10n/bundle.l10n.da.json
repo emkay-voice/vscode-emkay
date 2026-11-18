@@ -45,5 +45,16 @@
   "e.g. {0}": "f.eks. {0}",
   "Test it: the beaker (Testing) in the bar on the left, or Ctrl+Shift+P → Emkay: Test the skill.": "Test den: kolben (Test) i bjælken til venstre, eller Ctrl+Shift+P → Emkay: Test skill'en.",
   "✓ {0} runs in Emkay. Its test sentences are in the Testing view.": "✓ {0} kører i Emkay. Dens testsætninger er i Test-visningen.",
-  "Open tests": "Åbn testene"
+  "Open tests": "Åbn testene",
+  "Send to my Emkay": "Send til min Emkay",
+  "Publish to GitHub": "Udgiv på GitHub",
+  "How?": "Hvordan?",
+  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "Din skill skal først ligge på GitHub: din telefons Emkay henter den derfra.",
+  "Send anyway": "Send alligevel",
+  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "Du har ændringer, der ikke er på GitHub endnu ({0}). Telefonen får det, der er på GitHub – commit og push (Synkronisér) først.",
+  "Scan this with your phone's camera.": "Scan den her med telefonens kamera.",
+  "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "Emkay åbner og viser din skill. Tryk Installér – den bliver på den Emkay, og Opdatér under menu → Fra GitHub henter din nyeste version.",
+  "Copy link": "Kopiér link",
+  "Copied": "Kopieret",
+  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "Repoet skal være offentligt, og kun det, du har pushet til GitHub, kommer over på telefonen."
 }

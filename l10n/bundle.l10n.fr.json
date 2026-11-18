@@ -45,5 +45,16 @@
   "e.g. {0}": "p. ex. {0}",
   "Test it: the beaker (Testing) in the bar on the left, or Ctrl+Shift+P → Emkay: Test the skill.": "Testez-la : le flacon (Tests) dans la barre à gauche, ou Ctrl+Maj+P → Emkay : Tester la skill.",
   "✓ {0} runs in Emkay. Its test sentences are in the Testing view.": "✓ {0} tourne dans Emkay. Ses phrases de test sont dans la vue Tests.",
-  "Open tests": "Ouvrir les tests"
+  "Open tests": "Ouvrir les tests",
+  "Send to my Emkay": "Envoyer à mon Emkay",
+  "Publish to GitHub": "Publier sur GitHub",
+  "How?": "Comment ?",
+  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "Votre skill doit d'abord être sur GitHub : l'Emkay de votre téléphone la récupère là-bas.",
+  "Send anyway": "Envoyer quand même",
+  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "Vous avez des modifications qui ne sont pas encore sur GitHub ({0}). Le téléphone reçoit ce qui est sur GitHub – faites d'abord commit et push (Synchroniser).",
+  "Scan this with your phone's camera.": "Scannez ceci avec l'appareil photo de votre téléphone.",
+  "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "Emkay s'ouvre et montre votre skill. Touchez Installer – elle reste sur cet Emkay, et Mettre à jour dans menu → Depuis GitHub récupère votre version la plus récente.",
+  "Copy link": "Copier le lien",
+  "Copied": "Copié",
+  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "Le dépôt doit être public, et seul ce que vous avez poussé sur GitHub va sur le téléphone."
 }

@@ -15,6 +15,7 @@ const out = `// Built by tools/build.mjs from extension.js and template.js – e
 (function () {
 const outerRequire = typeof require === "function" ? require : undefined;
 const sources = {
+${wrap("./vendor/qrcode.js", read("vendor/qrcode.js"))}
 ${wrap("./template.js", read("template.js"))}
 ${wrap("./extension.js", read("extension.js"))}
 };
