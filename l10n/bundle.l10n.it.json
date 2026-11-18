@@ -56,5 +56,17 @@
   "Your skill has to be on GitHub first: your Emkay fetches it from there.": "La tua skill deve prima essere su GitHub: il tuo Emkay la prende da lì.",
   "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Hai modifiche che non sono ancora su GitHub ({0}). Il tuo Emkay riceve ciò che è su GitHub: prima fai commit e push (Sincronizza).",
   "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Inquadralo con la fotocamera del telefono o del tablet su cui gira Emkay, oppure apri lì il link.",
-  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Il repository deve essere pubblico, e sul tuo Emkay arriva solo ciò che hai inviato (push) a GitHub."
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Il repository deve essere pubblico, e sul tuo Emkay arriva solo ciò che hai inviato (push) a GitHub.",
+  "Add language translates the skill's English: it needs a locale/en-US folder.": "Aggiungi lingua traduce i testi inglesi della skill: serve una cartella locale/en-US.",
+  "Your skill speaks all of Emkay's languages already.": "La tua skill parla già tutte le lingue di Emkay.",
+  "Add language": "Aggiungi lingua",
+  "The translation did not work: {0}": "La traduzione non è riuscita: {0}",
+  "{0}: machine translated on this device with {1} (https://huggingface.co/{2}).": "{0}: tradotto automaticamente su questo dispositivo con {1} (https://huggingface.co/{2}).",
+  "left out from {0}: \"{1}\" – {2}": "tralasciato da {0}: \"{1}\" – {2}",
+  "copied unchanged: {0}": "copiato senza modifiche: {0}",
+  "Commit message (in Source Control): {0}": "Messaggio di commit (in Controllo del codice sorgente): {0}",
+  "Commit message to use: {0}": "Messaggio di commit da usare: {0}",
+  "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} aggiunto: {1} file, una bozza di una macchina. Falla rileggere a chi parla {0}. {2} righe sono state tralasciate (vedi il registro di Emkay).",
+  "Which language?": "Quale lingua?",
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Traduzione in {0} su questo dispositivo – la prima volta viene scaricato il modello della lingua (100–300 MB)…"
 }

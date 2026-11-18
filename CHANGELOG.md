@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4
+
+- **Emkay: Add language…**: translates your skill's English into one of Emkay's languages – on your own device, in Emkay next to the code, with the models and the rules OpenVoiceOS' ovos-localize uses: `{slots}` are never touched, each `(a|b)` alternative is translated on its own, a line that does not come back whole is left out (and listed with the reason), and ovos-localize's checks run on the result. The first time, the language's model is downloaded (about 100–300 MB) and kept. It writes `locale/<language>/` and test sentences for it, and suggests OVOS' commit message for a machine's translation – have someone who speaks the language read it through.
+- *New skill*: a template suggests its own name (quiz, web, screen), and every skill template ends with the sentence to try.
+- The plain template is `emkay-voice/ovos-skill-hello-example` now; its `publish.yml` publishes the skills made from it.
+
 ## 0.1.3
 
 - **Emkay: Send to my Emkay**: a QR code and a link that install the skill from GitHub on the Emkay you scan it with (a phone, a tablet…), with Update and Remove under menu → From GitHub there. It finds the repository from vscode.dev/github/… or from git, warns about changes not pushed yet, and offers *Publish to GitHub* when the skill is not on GitHub.

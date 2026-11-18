@@ -20,5 +20,6 @@
   "walk.test.title": "La tester",
   "walk.test.description": "Les phrases de test de test/end2end/ sont envoyées à Emkay une par une ; chacune doit atteindre votre skill. Les mêmes tests que la boutique Emkay et ovos-tui-client.\n[La tester](command:emkay.test)",
   "cfg.templates": "Où *Emkay : Nouvelle skill* trouve ses modèles (`index.json` et un fichier par modèle). Créé par [emkay-voice/dev](https://github.com/emkay-voice/dev) à partir de son `templates.json`.",
-  "cmd.send": "Envoyer à mon Emkay (code QR)"
+  "cmd.send": "Envoyer à mon Emkay (code QR)",
+  "cmd.addLanguage": "Ajouter une langue…"
 }

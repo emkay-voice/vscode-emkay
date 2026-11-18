@@ -56,5 +56,17 @@
   "Your skill has to be on GitHub first: your Emkay fetches it from there.": "Je skill moet eerst op GitHub staan: je Emkay haalt hem daar op.",
   "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Je hebt wijzigingen die nog niet op GitHub staan ({0}). Je Emkay krijgt wat op GitHub staat – eerst committen en pushen (Synchroniseren).",
   "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Scan hem met de camera van de telefoon of tablet waarop Emkay draait – of open de link daar.",
-  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "De repository moet openbaar zijn, en alleen wat je naar GitHub hebt gepusht gaat naar je Emkay."
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "De repository moet openbaar zijn, en alleen wat je naar GitHub hebt gepusht gaat naar je Emkay.",
+  "Add language translates the skill's English: it needs a locale/en-US folder.": "Taal toevoegen vertaalt de Engelse teksten van de skill: die heeft een map locale/en-US nodig.",
+  "Your skill speaks all of Emkay's languages already.": "Je skill spreekt al alle talen van Emkay.",
+  "Add language": "Taal toevoegen",
+  "The translation did not work: {0}": "De vertaling is niet gelukt: {0}",
+  "{0}: machine translated on this device with {1} (https://huggingface.co/{2}).": "{0}: machinaal vertaald op dit apparaat met {1} (https://huggingface.co/{2}).",
+  "left out from {0}: \"{1}\" – {2}": "weggelaten uit {0}: \"{1}\" – {2}",
+  "copied unchanged: {0}": "ongewijzigd gekopieerd: {0}",
+  "Commit message (in Source Control): {0}": "Commitbericht (in Broncodebeheer): {0}",
+  "Commit message to use: {0}": "Commitbericht om te gebruiken: {0}",
+  "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} toegevoegd: {1} bestanden, een concept van een machine. Laat iemand die {0} spreekt het nalezen. {2} regels zijn weggelaten (zie het logboek van Emkay).",
+  "Which language?": "Welke taal?",
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Vertalen naar het {0} op dit apparaat – de eerste keer wordt het model van die taal gedownload (100–300 MB)…"
 }

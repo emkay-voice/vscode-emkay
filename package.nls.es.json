@@ -20,5 +20,6 @@
   "walk.test.title": "Probarla",
   "walk.test.description": "Las frases de prueba de test/end2end/ se envían a Emkay una a una; cada una debe llegar a tu skill. Las mismas pruebas que la tienda Emkay y ovos-tui-client.\n[Probarla](command:emkay.test)",
   "cfg.templates": "Dónde encuentra *Emkay: Nueva skill* sus plantillas (`index.json` y un archivo por plantilla). Lo genera [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir de su `templates.json`.",
-  "cmd.send": "Enviar a mi Emkay (código QR)"
+  "cmd.send": "Enviar a mi Emkay (código QR)",
+  "cmd.addLanguage": "Añadir idioma…"
 }

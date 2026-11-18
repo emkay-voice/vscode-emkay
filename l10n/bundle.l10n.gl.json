@@ -56,5 +56,17 @@
   "Your skill has to be on GitHub first: your Emkay fetches it from there.": "A túa skill ten que estar primeiro en GitHub: o teu Emkay tráea de alí.",
   "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Tes cambios que aínda non están en GitHub ({0}). O teu Emkay recibe o que hai en GitHub: fai primeiro commit e push (Sincronizar).",
   "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Escanéao coa cámara do teléfono ou da tableta onde funciona o Emkay, ou abre alí a ligazón.",
-  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "O repositorio ten que ser público, e só o que subiches (push) a GitHub chega ao teu Emkay."
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "O repositorio ten que ser público, e só o que subiches (push) a GitHub chega ao teu Emkay.",
+  "Add language translates the skill's English: it needs a locale/en-US folder.": "Engadir lingua traduce os textos en inglés da skill: precisa dun cartafol locale/en-US.",
+  "Your skill speaks all of Emkay's languages already.": "A túa skill xa fala todas as linguas de Emkay.",
+  "Add language": "Engadir lingua",
+  "The translation did not work: {0}": "A tradución non funcionou: {0}",
+  "{0}: machine translated on this device with {1} (https://huggingface.co/{2}).": "{0}: traducido automaticamente neste dispositivo con {1} (https://huggingface.co/{2}).",
+  "left out from {0}: \"{1}\" – {2}": "omitido de {0}: \"{1}\" – {2}",
+  "copied unchanged: {0}": "copiado sen cambios: {0}",
+  "Commit message (in Source Control): {0}": "Mensaxe de commit (en Control de código fonte): {0}",
+  "Commit message to use: {0}": "Mensaxe de commit para usar: {0}",
+  "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} engadido: {1} ficheiros, un borrador dunha máquina. Que alguén que fale {0} o revise. Omitíronse {2} liñas (mira o rexistro de Emkay).",
+  "Which language?": "Que lingua?",
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Traducindo ao {0} neste dispositivo – a primeira vez descárgase o modelo da lingua (100–300 MB)…"
 }

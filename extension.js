@@ -741,6 +741,125 @@ async function newSkill() {
   await vscode.commands.executeCommand("emkay.run");
 }
 
+// ------------------------------------------------------------ add language
+
+/** Emkay's languages, as locale folder names (OVOS' own spelling). */
+const EMKAY_LANGS = ["en-US", "da-DK", "de-DE", "nl-NL", "fr-FR", "es-ES", "it-IT", "pt-BR", "pt-PT", "ca-ES", "gl-ES", "eu-ES"];
+
+/** A language's name in the language VS Code speaks: "Danish", "dansk" … */
+function langName(code) {
+  try { return new Intl.DisplayNames([vscode.env.language], { type: "language" }).of(code) || code; } catch { return code; }
+}
+
+/** The text files under a folder: {path below it: text}. */
+async function textsOf(dir, rel = "", out = {}) {
+  for (const [name, type] of await vscode.workspace.fs.readDirectory(dir)) {
+    const uri = vscode.Uri.joinPath(dir, name), path = rel ? `${rel}/${name}` : name;
+    if (type & vscode.FileType.Directory) await textsOf(uri, path, out);
+    else if (type & vscode.FileType.File) out[path] = (await readText(uri)) ?? "";
+  }
+  return out;
+}
+
+/** Put a suggested commit message in VS Code's Source Control box, if it is empty; false where we can't. */
+async function suggestCommit(root, message) {
+  try {
+    const ext = vscode.extensions.getExtension("vscode.git");
+    if (!ext) return false;
+    const api = (ext.isActive ? ext.exports : await ext.activate()).getAPI(1);
+    const repo = api.repositories.find((r) => root.path.startsWith(r.rootUri.path));
+    if (!repo) return false;
+    if (!repo.inputBox.value) repo.inputBox.value = message;
+    return true;
+  } catch { return false; }
+}
+
+/**
+ * Emkay: Add language… (#2): the skill's locale/en-US translated into one of
+ * Emkay's languages, in Emkay next to the code – on this device, with the
+ * models OVOS' ovos-localize uses, and its rules for {slots} and (a|b)
+ * groups – then written to locale/<lang>/, with golden utterances to test
+ * it. A machine's draft: the commit message says so (ovos-localize's
+ * convention), and someone who speaks the language should read it.
+ */
+async function addLanguage(context) {
+  const skill = await findSkill();
+  if (!skill) {
+    vscode.window.showWarningMessage(t("There is no skill in this folder yet. Make one?"), t("New skill…"))
+      .then((x) => x && vscode.commands.executeCommand("emkay.newSkill"));
+    return;
+  }
+  const locale = vscode.Uri.joinPath(skill.folder, "locale");
+  let dirs = [];
+  try { dirs = (await vscode.workspace.fs.readDirectory(locale)).filter(([, ty]) => ty & vscode.FileType.Directory).map(([n]) => n); } catch {}
+  const en = dirs.find((d) => d.toLowerCase() === "en-us");
+  if (!en) {
+    vscode.window.showWarningMessage(t("Add language translates the skill's English: it needs a locale/en-US folder."));
+    return;
+  }
+  const have = new Set(dirs.map((d) => d.toLowerCase()));
+  const missing = EMKAY_LANGS.filter((l) => !have.has(l.toLowerCase()));
+  if (!missing.length) {
+    vscode.window.showInformationMessage(t("Your skill speaks all of Emkay's languages already."));
+    return;
+  }
+  const pick = await vscode.window.showQuickPick(missing.map((l) => ({ label: langName(l), description: l, lang: l })), {
+    title: t("Add language"),
+    placeHolder: t("Which language?"),
+  });
+  if (!pick) return;
+  const lang = pick.lang;
+  const files = await textsOf(vscode.Uri.joinPath(locale, en));
+  const p = openPanel(context);
+  let r;
+  try {
+    r = await vscode.window.withProgress({ location: vscode.ProgressLocation.Notification, title: t("Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…", pick.label) },
+      () => p.op("translate", { lang, files }));
+  } catch (e) {
+    vscode.window.showErrorMessage(t("The translation did not work: {0}", e.message || String(e)));
+    return;
+  }
+  if (!r?.ok) {
+    vscode.window.showErrorMessage(t("The translation did not work: {0}", r?.error || ""));
+    return;
+  }
+  // the folder name in the skill's own spelling (en-US, or en-us)
+  const dirName = en === en.toLowerCase() ? lang.toLowerCase() : lang;
+  const dest = vscode.Uri.joinPath(locale, dirName);
+  for (const [path, text] of Object.entries(r.files)) {
+    await vscode.workspace.fs.writeFile(vscode.Uri.joinPath(dest, ...path.split("/")), new TextEncoder().encode(text));
+  }
+  // golden utterances in the new language, from its intents' first sentences
+  const rows = [];
+  for (const [path, text] of Object.entries(r.files)) {
+    if (!path.endsWith(".intent")) continue;
+    const lines = text.split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#"));
+    for (const l of lines.slice(0, 2)) {
+      rows.push({ skill_id: skill.skillId, utterance: firstOption(l).toLowerCase(), lang, intent_label: path.split("/").pop() });
+    }
+  }
+  if (rows.length) {
+    const gold = vscode.Uri.joinPath(skill.root, "test", "end2end", `golden_utterances_${lang}.jsonl`);
+    await vscode.workspace.fs.writeFile(gold, new TextEncoder().encode(rows.map((x) => JSON.stringify(x)).join("\n") + "\n"));
+  }
+  // the report: who translated, what was left out and why
+  out.appendLine("");
+  out.appendLine("🌍 " + t("{0}: machine translated on this device with {1} (https://huggingface.co/{2}).", pick.label, r.model, r.repo));
+  for (const d of r.dropped) out.appendLine("   ✗ " + t("left out from {0}: \"{1}\" – {2}", d.file, d.line, d.reason));
+  for (const c of r.copied) out.appendLine("   = " + t("copied unchanged: {0}", c));
+  for (const x of r.problems) out.appendLine(`   ${x.severity === "error" ? "✗" : "⚠"} ${x.file}: ${x.message}`);
+  const message = `translate(${lang}): machine translated with linguonnx ${r.model}`;
+  const inBox = await suggestCommit(skill.root, message);
+  out.appendLine("   " + (inBox ? t("Commit message (in Source Control): {0}", message) : t("Commit message to use: {0}", message)));
+  out.show(true);
+  const first = Object.keys(r.files).find((f) => f.endsWith(".intent")) || Object.keys(r.files)[0];
+  if (first) await vscode.window.showTextDocument(vscode.Uri.joinPath(dest, ...first.split("/")), { preview: false });
+  await refreshTests();
+  vscode.window.showInformationMessage(
+    t("{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).", pick.label, Object.keys(r.files).length, r.dropped.length),
+    t("Show Emkay's log")).then((x) => x && out.show());
+}
+
 // ----------------------------------------------------------- status, setup
 
 function setStatus(text) {
@@ -776,6 +895,7 @@ function activate(context) {
   reg("emkay.stop", () => stop());
   reg("emkay.showLog", () => out.show());
   reg("emkay.send", () => sendToEmkay(context));
+  reg("emkay.addLanguage", () => addLanguage(context));
   reg("emkay.say", async (text) => {
     if (typeof text !== "string") {
       text = await vscode.window.showInputBox({ title: t("Say to Emkay"), prompt: t("Type what you would say") });

@@ -56,5 +56,17 @@
   "Your skill has to be on GitHub first: your Emkay fetches it from there.": "A sua skill tem de estar primeiro no GitHub: o seu Emkay vai buscá-la lá.",
   "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Tem alterações que ainda não estão no GitHub ({0}). O seu Emkay recebe o que está no GitHub – faça primeiro commit e push (Sincronizar).",
   "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Leia-o com a câmara do telemóvel ou tablet onde o Emkay corre – ou abra a ligação lá.",
-  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "O repositório tem de ser público, e só o que enviou (push) para o GitHub vai para o seu Emkay."
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "O repositório tem de ser público, e só o que enviou (push) para o GitHub vai para o seu Emkay.",
+  "Add language translates the skill's English: it needs a locale/en-US folder.": "Adicionar idioma traduz os textos em inglês da skill: precisa de uma pasta locale/en-US.",
+  "Your skill speaks all of Emkay's languages already.": "A tua skill já fala todas as línguas do Emkay.",
+  "Add language": "Adicionar idioma",
+  "The translation did not work: {0}": "A tradução não funcionou: {0}",
+  "{0}: machine translated on this device with {1} (https://huggingface.co/{2}).": "{0}: traduzido automaticamente neste dispositivo com {1} (https://huggingface.co/{2}).",
+  "left out from {0}: \"{1}\" – {2}": "deixado de fora de {0}: \"{1}\" – {2}",
+  "copied unchanged: {0}": "copiado sem alterações: {0}",
+  "Commit message (in Source Control): {0}": "Mensagem de commit (no Controlo de Código-Fonte): {0}",
+  "Commit message to use: {0}": "Mensagem de commit a usar: {0}",
+  "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} adicionado: {1} ficheiros, um rascunho de máquina. Pede a alguém que fale {0} para o rever. {2} linhas ficaram de fora (vê o registo do Emkay).",
+  "Which language?": "Que língua?",
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "A traduzir para {0} neste dispositivo – da primeira vez, o modelo da língua é descarregado (100–300 MB)…"
 }

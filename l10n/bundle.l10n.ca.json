@@ -56,5 +56,17 @@
   "Your skill has to be on GitHub first: your Emkay fetches it from there.": "La teva skill ha de ser primer a GitHub: el teu Emkay la va a buscar allà.",
   "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Tens canvis que encara no són a GitHub ({0}). El teu Emkay rep el que hi ha a GitHub: fes primer commit i push (Sincronitza).",
   "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Escaneja'l amb la càmera del telèfon o la tauleta on funciona l'Emkay, o obre-hi l'enllaç.",
-  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "El repositori ha de ser públic, i només el que has pujat (push) a GitHub arriba al teu Emkay."
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "El repositori ha de ser públic, i només el que has pujat (push) a GitHub arriba al teu Emkay.",
+  "Add language translates the skill's English: it needs a locale/en-US folder.": "Afegeix una llengua tradueix els textos en anglès de la skill: necessita una carpeta locale/en-US.",
+  "Your skill speaks all of Emkay's languages already.": "La teva skill ja parla totes les llengües de l'Emkay.",
+  "Add language": "Afegeix una llengua",
+  "The translation did not work: {0}": "La traducció no ha funcionat: {0}",
+  "{0}: machine translated on this device with {1} (https://huggingface.co/{2}).": "{0}: traduït automàticament en aquest dispositiu amb {1} (https://huggingface.co/{2}).",
+  "left out from {0}: \"{1}\" – {2}": "omès de {0}: \"{1}\" – {2}",
+  "copied unchanged: {0}": "copiat sense canvis: {0}",
+  "Commit message (in Source Control): {0}": "Missatge de commit (a Control de codi font): {0}",
+  "Commit message to use: {0}": "Missatge de commit per fer servir: {0}",
+  "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} afegit: {1} fitxers, un esborrany d'una màquina. Fes que algú que parli {0} el revisi. S'han omès {2} línies (mira el registre de l'Emkay).",
+  "Which language?": "Quina llengua?",
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Traduint al {0} en aquest dispositiu – el primer cop es baixa el model de la llengua (100–300 MB)…"
 }

@@ -56,5 +56,17 @@
   "Your skill has to be on GitHub first: your Emkay fetches it from there.": "Din skill skal først ligge på GitHub: din Emkay henter den derfra.",
   "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Du har ændringer, der ikke er på GitHub endnu ({0}). Din Emkay får det, der er på GitHub – commit og push (Synkronisér) først.",
   "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Scan den med kameraet på den telefon eller tablet, Emkay kører på – eller åbn linket der.",
-  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Repoet skal være offentligt, og kun det, du har pushet til GitHub, kommer over på din Emkay."
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Repoet skal være offentligt, og kun det, du har pushet til GitHub, kommer over på din Emkay.",
+  "Add language translates the skill's English: it needs a locale/en-US folder.": "Tilføj sprog oversætter skillens engelske tekster: den skal have en mappe locale/en-US.",
+  "Your skill speaks all of Emkay's languages already.": "Din skill taler allerede alle Emkays sprog.",
+  "Add language": "Tilføj sprog",
+  "The translation did not work: {0}": "Oversættelsen virkede ikke: {0}",
+  "{0}: machine translated on this device with {1} (https://huggingface.co/{2}).": "{0}: maskinoversat her på enheden med {1} (https://huggingface.co/{2}).",
+  "left out from {0}: \"{1}\" – {2}": "udeladt fra {0}: \"{1}\" – {2}",
+  "copied unchanged: {0}": "kopieret uændret: {0}",
+  "Commit message (in Source Control): {0}": "Commit-besked (i Source Control): {0}",
+  "Commit message to use: {0}": "Commit-besked du kan bruge: {0}",
+  "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} tilføjet: {1} filer, et udkast fra en maskine. Få en, der taler {0}, til at læse det igennem. {2} linjer blev udeladt (se Emkays log).",
+  "Which language?": "Hvilket sprog?",
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Oversætter til {0} her på enheden – første gang hentes sprogets model (100–300 MB)…"
 }

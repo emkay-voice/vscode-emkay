@@ -56,5 +56,17 @@
   "Your skill has to be on GitHub first: your Emkay fetches it from there.": "Zure skillak GitHub-en egon behar du lehenik: zure Emkayk hortik hartzen du.",
   "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "GitHub-en oraindik ez dauden aldaketak dituzu ({0}). Zure Emkayk GitHub-en dagoena jasotzen du: egin lehenik commit eta push (Sinkronizatu).",
   "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Eskaneatu Emkay dabilen telefono edo tabletaren kamerarekin, edo ireki esteka bertan.",
-  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Repoak publikoa izan behar du, eta GitHub-era bidali (push) duzuna bakarrik iristen da zure Emkayra."
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Repoak publikoa izan behar du, eta GitHub-era bidali (push) duzuna bakarrik iristen da zure Emkayra.",
+  "Add language translates the skill's English: it needs a locale/en-US folder.": "Gehitu hizkuntzak skill-aren ingelesezko testuak itzultzen ditu: locale/en-US karpeta bat behar du.",
+  "Your skill speaks all of Emkay's languages already.": "Zure skill-ak Emkayren hizkuntza guztiak hitz egiten ditu jada.",
+  "Add language": "Gehitu hizkuntza",
+  "The translation did not work: {0}": "Itzulpenak ez du funtzionatu: {0}",
+  "{0}: machine translated on this device with {1} (https://huggingface.co/{2}).": "{0}: automatikoki itzulia gailu honetan {1}-rekin (https://huggingface.co/{2}).",
+  "left out from {0}: \"{1}\" – {2}": "{0}-tik kanpo utzia: \"{1}\" – {2}",
+  "copied unchanged: {0}": "aldatu gabe kopiatua: {0}",
+  "Commit message (in Source Control): {0}": "Commit mezua (Iturburu-kontrolean): {0}",
+  "Commit message to use: {0}": "Erabiltzeko commit mezua: {0}",
+  "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} gehitua: {1} fitxategi, makina baten zirriborroa. Eskatu {0} hitz egiten duen norbaiti irakurtzeko. {2} lerro kanpo utzi dira (ikusi Emkayren erregistroa).",
+  "Which language?": "Zein hizkuntza?",
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "{0}ra itzultzen gailu honetan – lehen aldian hizkuntzaren eredua deskargatzen da (100–300 MB)…"
 }
