@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- **Emkay: Send to my Emkay**: a QR code and a link that install the skill from GitHub on the Emkay you scan it with (a phone, a tablet…), with Update and Remove under menu → From GitHub there. It finds the repository from vscode.dev/github/… or from git, warns about changes not pushed yet, and offers *Publish to GitHub* when the skill is not on GitHub.
+
 ## 0.1.2
 
 - *New skill* makes the skill in English and in your own language (Emkay's, else VS Code's), not in all twelve; more languages come later with *Add language*.
