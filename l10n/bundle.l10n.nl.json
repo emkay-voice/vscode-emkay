@@ -42,5 +42,8 @@
   "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Test de zinnen in het {0}, de taal die Emkay spreekt; verander de taal van Emkay in zijn instellingen om een andere te testen.",
   "Emkay speaks {0}. Try saying: {1}": "Emkay spreekt {0}. Zeg bijvoorbeeld: {1}",
   "Your skill has no sentences in {0}, the language Emkay speaks. Add locale/{0}/, or change Emkay's language in its settings.": "Je skill heeft geen zinnen in {0}, de taal die Emkay spreekt. Voeg locale/{0}/ toe, of verander de taal van Emkay in de instellingen.",
-  "e.g. {0}": "bijv. {0}"
+  "e.g. {0}": "bijv. {0}",
+  "Test it: the beaker (Testing) in the bar on the left, or Ctrl+Shift+P → Emkay: Test the skill.": "Test hem: de kolf (Testen) in de balk links, of Ctrl+Shift+P → Emkay: De skill testen.",
+  "✓ {0} runs in Emkay. Its test sentences are in the Testing view.": "✓ {0} draait in Emkay. De testzinnen staan in de testweergave.",
+  "Open tests": "Tests openen"
 }

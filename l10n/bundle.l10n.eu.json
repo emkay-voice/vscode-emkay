@@ -42,5 +42,8 @@
   "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "{0} hizkuntzako esaldiak probatzen, Emkayk hitz egiten duena; aldatu Emkayren hizkuntza ezarpenetan beste bat probatzeko.",
   "Emkay speaks {0}. Try saying: {1}": "Emkayk {0} hitz egiten du. Saiatu esaten: {1}",
   "Your skill has no sentences in {0}, the language Emkay speaks. Add locale/{0}/, or change Emkay's language in its settings.": "Zure skillak ez du esaldirik {0} hizkuntzan, Emkayk hitz egiten duenean. Gehitu locale/{0}/, edo aldatu Emkayren hizkuntza ezarpenetan.",
-  "e.g. {0}": "adib. {0}"
+  "e.g. {0}": "adib. {0}",
+  "Test it: the beaker (Testing) in the bar on the left, or Ctrl+Shift+P → Emkay: Test the skill.": "Probatu: matrazea (Probak) ezkerreko barran, edo Ctrl+Shift+P → Emkay: Probatu skilla.",
+  "✓ {0} runs in Emkay. Its test sentences are in the Testing view.": "✓ {0} Emkayn dabil. Bere proba-esaldiak Probak ikuspegian daude.",
+  "Open tests": "Ireki probak"
 }

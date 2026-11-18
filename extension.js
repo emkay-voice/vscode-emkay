@@ -21,6 +21,7 @@ const t = (msg, ...args) => vscode.l10n.t(msg, ...args);
 /** @type {vscode.StatusBarItem} */ let status;
 /** @type {vscode.TestController} */ let tests;
 let lastRun = null;   // {skillId, ok} of the last load
+let toldTests = false;   // the "your tests are in the Testing view" note, once a session
 
 // ------------------------------------------------------------------ helpers
 
@@ -131,6 +132,43 @@ async function filesOf(folder) {
   return files;
 }
 
+/** "(hello|hi) from my [first] skill" -> "hello from my first skill": the first of each (a|b), [x] kept. */
+function firstOption(line) {
+  let s = line, prev;
+  do { prev = s; s = s.replace(/\(([^()|]*)(\|[^()]*)?\)/g, "$1"); } while (s !== prev);
+  return s.replace(/\[([^\[\]]*)\]/g, "$1").replace(/\s+/g, " ").trim();
+}
+
+/**
+ * A new skill starts in English (what the rest of OpenVoiceOS reads) and in
+ * the user's own language only; Emkay: Add language adds the others. A
+ * template without en-US is left as it is.
+ * @param {Record<string, Uint8Array>} files  path -> bytes
+ * @param {string} lang  Emkay's language, else VS Code's ("da", "pt-br", "en")
+ */
+function keepLanguages(files, lang) {
+  const tags = new Set();
+  for (const p of Object.keys(files)) {
+    const m = p.match(/(?:^|\/)locale\/([^/]+)\//);
+    if (m) tags.add(m[1]);
+  }
+  const en = [...tags].find((x) => x.toLowerCase() === "en-us");
+  if (!en) return files;
+  const want = String(lang || "en").toLowerCase();
+  const mine = [...tags].find((x) => x.toLowerCase() === want) ||
+    [...tags].find((x) => x.toLowerCase().split("-")[0] === want.split("-")[0]);
+  const keep = new Set([en.toLowerCase(), (mine || en).toLowerCase()]);
+  const out = {};
+  for (const [p, bytes] of Object.entries(files)) {
+    const loc = p.match(/(?:^|\/)locale\/([^/]+)\//);
+    if (loc && !keep.has(loc[1].toLowerCase())) continue;
+    const gold = p.match(/golden_utterances_([^/]+)\.jsonl$/);
+    if (gold && !keep.has(gold[1].toLowerCase())) continue;
+    out[p] = bytes;
+  }
+  return out;
+}
+
 /**
  * A few sentences the skill answers in Emkay's language: the first line of
  * each locale/<lang>/*.intent, with padatious' (a|b) reduced to a.
@@ -148,7 +186,7 @@ async function exampleSentences(folder, lang) {
     if (!name.endsWith(".intent")) continue;
     const text = (await readText(vscode.Uri.joinPath(locale, dir, name))) || "";
     const line = text.split(/\r?\n/).map((l) => l.trim()).find((l) => l && !l.startsWith("#"));
-    if (line) out.push(line.replace(/\(([^|()]*)(\|[^()]*)?\)/g, "$1").replace(/\s+/g, " ").trim());
+    if (line) out.push(firstOption(line));
   }
   return out.slice(0, 3);
 }
@@ -366,6 +404,12 @@ async function run(context, { quiet = false } = {}) {
           p.view.webview.postMessage({ hint: t("e.g. {0}", examples[0]) });
         }
       }
+      out.appendLine("🧪 " + t("Test it: the beaker (Testing) in the bar on the left, or Ctrl+Shift+P → Emkay: Test the skill."));
+      if (!quiet && !toldTests) {
+        toldTests = true;
+        vscode.window.showInformationMessage(t("✓ {0} runs in Emkay. Its test sentences are in the Testing view.", skill.skillId), t("Open tests"))
+          .then((x) => x && vscode.commands.executeCommand("workbench.view.testing.focus"));
+      }
     } else {
       out.appendLine(t("✗ {0} did not load:", skill.skillId));
       for (const p of r.problems || []) out.appendLine("   " + p);
@@ -548,7 +592,7 @@ async function newSkill() {
   if (!author) return;
   let files;
   try {
-    files = await templateFiles(tpl, name.trim(), author.trim());
+    files = keepLanguages(await templateFiles(tpl, name.trim(), author.trim()), panel?.lang || vscode.env.language);
   } catch (e) {
     vscode.window.showErrorMessage(e.message);
     return;
@@ -567,14 +611,15 @@ async function newSkill() {
   }
   const main = Object.keys(files).filter((p) => p.endsWith("__init__.py") && !/(^|\/)tests?\//.test(p))
     .sort((a, b) => a.split("/").length - b.split("/").length)[0];
-  const lang = (vscode.env.language || "en").slice(0, 2).toLowerCase();
+  // the intent in the user's language (the one besides en-US that was kept)
   const intents = Object.keys(files).filter((p) => p.endsWith(".intent"));
-  const intent = intents.find((p) => p.toLowerCase().includes(`/locale/${lang}-`)) || intents.find((p) => p.includes("/en-US/"));
+  const intent = intents.find((p) => !/\/locale\/en-us\//i.test(p)) || intents.find((p) => /\/locale\/en-us\//i.test(p)) || intents[0];
   if (main) await vscode.window.showTextDocument(vscode.Uri.joinPath(ws.uri, main), { preview: false, viewColumn: vscode.ViewColumn.One });
   if (intent) await vscode.window.showTextDocument(vscode.Uri.joinPath(ws.uri, intent), { preview: false, viewColumn: vscode.ViewColumn.One });
   await updateContext();
   if (tpl.builtIn || tpl.id === "skill") {
-    vscode.window.showInformationMessage(t("Your skill is made. Emkay starts next to it now – then type \"{0}\" below Emkay.", template.firstSentence(name.trim(), vscode.env.language)));
+    const first = intent ? firstOption(new TextDecoder().decode(files[intent]).split(/\r?\n/).find((l) => l.trim() && !l.startsWith("#")) || "") : "";
+    vscode.window.showInformationMessage(t("Your skill is made. Emkay starts next to it now – then type \"{0}\" below Emkay.", first || template.firstSentence(name.trim(), vscode.env.language)));
   } else {
     vscode.window.showInformationMessage(t("Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.", inLang(tpl.name)));
   }

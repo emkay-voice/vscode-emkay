@@ -42,5 +42,8 @@
   "Testing the sentences in {0}, the language Emkay speaks; change Emkay's language in its settings to test another.": "Probando las frases en {0}, el idioma que habla Emkay; cambia el idioma de Emkay en sus ajustes para probar otro.",
   "Emkay speaks {0}. Try saying: {1}": "Emkay habla {0}. Prueba a decir: {1}",
   "Your skill has no sentences in {0}, the language Emkay speaks. Add locale/{0}/, or change Emkay's language in its settings.": "Tu skill no tiene frases en {0}, el idioma que habla Emkay. Añade locale/{0}/ o cambia el idioma de Emkay en sus ajustes.",
-  "e.g. {0}": "p. ej. {0}"
+  "e.g. {0}": "p. ej. {0}",
+  "Test it: the beaker (Testing) in the bar on the left, or Ctrl+Shift+P → Emkay: Test the skill.": "Pruébala: el matraz (Pruebas) en la barra de la izquierda, o Ctrl+Mayús+P → Emkay: Probar la skill.",
+  "✓ {0} runs in Emkay. Its test sentences are in the Testing view.": "✓ {0} funciona en Emkay. Sus frases de prueba están en la vista Pruebas.",
+  "Open tests": "Abrir las pruebas"
 }

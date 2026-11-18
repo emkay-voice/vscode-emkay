@@ -72,7 +72,10 @@ function firstSentence(name, lang = "en") {
   const key = Object.keys(FILES).find((p) => p.endsWith("/hello.intent") &&
     (p.toLowerCase().includes(\`/locale/\${l}/\`) || p.toLowerCase().includes(\`/locale/\${l.split("-")[0]}-\`)));
   const text = FILES[key] || FILES[Object.keys(FILES).find((p) => p.endsWith("en-US/hello.intent"))] || "hello from my skill";
-  return text.split("\\n")[0];
+  // "(hello|hi) from my (skill|first skill)" -> "hello from my skill"
+  let s = text.split("\\n")[0], prev;
+  do { prev = s; s = s.replace(/\\(([^()|]*)(\\|[^()]*)?\\)/g, "$1"); } while (s !== prev);
+  return s.replace(/\\s+/g, " ").trim();
 }
 
 module.exports = { render, firstSentence, names };

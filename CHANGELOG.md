@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- *New skill* makes the skill in English and in your own language (Emkay's, else VS Code's), not in all twelve; more languages come later with *Add language*.
+- The template's intents have 10+ sentences each, written with (a|b) alternatives, and pass OpenVoiceOS' translation checks (ovos-localize).
+- After a run: where the tests are (the beaker on the left), and once a session a button that opens them.
+
 ## 0.1.1
 
 - After a run, the output says which language Emkay speaks and gives a few sentences to try from your skill (the typing line shows one too). If the skill has no sentences in that language, it says so.
