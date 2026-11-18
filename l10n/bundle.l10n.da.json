@@ -49,12 +49,12 @@
   "Send to my Emkay": "Send til min Emkay",
   "Publish to GitHub": "Udgiv på GitHub",
   "How?": "Hvordan?",
-  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "Din skill skal først ligge på GitHub: din telefons Emkay henter den derfra.",
   "Send anyway": "Send alligevel",
-  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "Du har ændringer, der ikke er på GitHub endnu ({0}). Telefonen får det, der er på GitHub – commit og push (Synkronisér) først.",
-  "Scan this with your phone's camera.": "Scan den her med telefonens kamera.",
   "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "Emkay åbner og viser din skill. Tryk Installér – den bliver på den Emkay, og Opdatér under menu → Fra GitHub henter din nyeste version.",
   "Copy link": "Kopiér link",
   "Copied": "Kopieret",
-  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "Repoet skal være offentligt, og kun det, du har pushet til GitHub, kommer over på telefonen."
+  "Your skill has to be on GitHub first: your Emkay fetches it from there.": "Din skill skal først ligge på GitHub: din Emkay henter den derfra.",
+  "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Du har ændringer, der ikke er på GitHub endnu ({0}). Din Emkay får det, der er på GitHub – commit og push (Synkronisér) først.",
+  "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Scan den med kameraet på den telefon eller tablet, Emkay kører på – eller åbn linket der.",
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Repoet skal være offentligt, og kun det, du har pushet til GitHub, kommer over på din Emkay."
 }

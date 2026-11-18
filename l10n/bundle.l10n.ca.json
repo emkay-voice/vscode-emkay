@@ -49,12 +49,12 @@
   "Send to my Emkay": "Envia al meu Emkay",
   "Publish to GitHub": "Publica a GitHub",
   "How?": "Com?",
-  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "La teva skill ha de ser primer a GitHub: l'Emkay del teu telèfon la va a buscar allà.",
   "Send anyway": "Envia igualment",
-  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "Tens canvis que encara no són a GitHub ({0}). El telèfon rep el que hi ha a GitHub: fes primer commit i push (Sincronitza).",
-  "Scan this with your phone's camera.": "Escaneja això amb la càmera del telèfon.",
   "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "L'Emkay s'obre i mostra la teva skill. Toca Instal·la: es queda en aquell Emkay, i Actualitza a menú → Des de GitHub en porta la versió més nova.",
   "Copy link": "Copia l'enllaç",
   "Copied": "Copiat",
-  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "El repositori ha de ser públic, i només el que has pujat (push) a GitHub arriba al telèfon."
+  "Your skill has to be on GitHub first: your Emkay fetches it from there.": "La teva skill ha de ser primer a GitHub: el teu Emkay la va a buscar allà.",
+  "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Tens canvis que encara no són a GitHub ({0}). El teu Emkay rep el que hi ha a GitHub: fes primer commit i push (Sincronitza).",
+  "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Escaneja'l amb la càmera del telèfon o la tauleta on funciona l'Emkay, o obre-hi l'enllaç.",
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "El repositori ha de ser públic, i només el que has pujat (push) a GitHub arriba al teu Emkay."
 }

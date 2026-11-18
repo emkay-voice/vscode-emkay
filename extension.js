@@ -481,7 +481,7 @@ async function unpushed(root) {
 
 /**
  * Emkay: Send to my Emkay (emkay-voice/emkay#49): a QR code and a link,
- * app.emkay.ai/?install=github:owner/repo, that the phone's camera opens in
+ * app.emkay.ai/?install=github:owner/repo, that the device's camera (or the link) opens in
  * Emkay, which shows the skill and installs it from GitHub after a tap.
  * Only what is pushed goes, and the repo must be public: Emkay fetches it
  * from GitHub without a login.
@@ -497,7 +497,7 @@ async function sendToEmkay(context) {
   if (!gh) {
     const publish = t("Publish to GitHub"), how = t("How?");
     const pick = await vscode.window.showInformationMessage(
-      t("Your skill has to be on GitHub first: your phone's Emkay fetches it from there."), publish, how);
+      t("Your skill has to be on GitHub first: your Emkay fetches it from there."), publish, how);
     if (pick === publish) {
       vscode.commands.executeCommand("github.publish").then(undefined, () =>
         vscode.env.openExternal(vscode.Uri.parse("https://dev.emkay.ai/#github")));
@@ -510,7 +510,7 @@ async function sendToEmkay(context) {
   if (waiting) {
     const anyway = t("Send anyway");
     const pick = await vscode.window.showWarningMessage(
-      t("You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.", waiting),
+      t("You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.", waiting),
       { modal: true }, anyway);
     if (pick !== anyway) return;
   }
@@ -541,9 +541,9 @@ async function sendToEmkay(context) {
 <h1>${esc(t("Send to my Emkay"))}</h1>
 <div class="repo">${esc(`${gh.owner}/${gh.repo}`)}${gh.ref ? ` · ${esc(gh.ref)}` : ""}</div>
 <div class="qr">${svg}</div>
-<p><b>${esc(t("Scan this with your phone's camera."))}</b><br>${esc(t("Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version."))}</p>
+<p><b>${esc(t("Scan it with the camera on the phone or tablet that runs Emkay – or open the link there."))}</b><br>${esc(t("Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version."))}</p>
 <p><code id="link">${esc(link)}</code><br><br><button id="copy">${esc(t("Copy link"))}</button></p>
-<p class="small">${esc(t("The repository must be public, and only what you have pushed to GitHub goes to the phone."))}</p>
+<p class="small">${esc(t("The repository must be public, and only what you have pushed to GitHub goes to your Emkay."))}</p>
 <script nonce="${nonce}">
   const vscode = acquireVsCodeApi();
   document.getElementById("copy").onclick = () => vscode.postMessage({ copy: true });

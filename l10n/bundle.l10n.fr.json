@@ -49,12 +49,12 @@
   "Send to my Emkay": "Envoyer à mon Emkay",
   "Publish to GitHub": "Publier sur GitHub",
   "How?": "Comment ?",
-  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "Votre skill doit d'abord être sur GitHub : l'Emkay de votre téléphone la récupère là-bas.",
   "Send anyway": "Envoyer quand même",
-  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "Vous avez des modifications qui ne sont pas encore sur GitHub ({0}). Le téléphone reçoit ce qui est sur GitHub – faites d'abord commit et push (Synchroniser).",
-  "Scan this with your phone's camera.": "Scannez ceci avec l'appareil photo de votre téléphone.",
   "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "Emkay s'ouvre et montre votre skill. Touchez Installer – elle reste sur cet Emkay, et Mettre à jour dans menu → Depuis GitHub récupère votre version la plus récente.",
   "Copy link": "Copier le lien",
   "Copied": "Copié",
-  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "Le dépôt doit être public, et seul ce que vous avez poussé sur GitHub va sur le téléphone."
+  "Your skill has to be on GitHub first: your Emkay fetches it from there.": "Votre skill doit d'abord être sur GitHub : votre Emkay la récupère là-bas.",
+  "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Vous avez des modifications qui ne sont pas encore sur GitHub ({0}). Votre Emkay reçoit ce qui est sur GitHub – faites d'abord commit et push (Synchroniser).",
+  "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Scannez-le avec l'appareil photo du téléphone ou de la tablette où tourne Emkay – ou ouvrez le lien là-bas.",
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Le dépôt doit être public, et seul ce que vous avez poussé sur GitHub va sur votre Emkay."
 }

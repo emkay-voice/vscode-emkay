@@ -49,12 +49,12 @@
   "Send to my Emkay": "An mein Emkay senden",
   "Publish to GitHub": "Auf GitHub veröffentlichen",
   "How?": "Wie?",
-  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "Dein Skill muss zuerst auf GitHub sein: das Emkay auf deinem Handy holt ihn von dort.",
   "Send anyway": "Trotzdem senden",
-  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "Du hast Änderungen, die noch nicht auf GitHub sind ({0}). Dein Handy bekommt, was auf GitHub ist – erst committen und pushen (Synchronisieren).",
-  "Scan this with your phone's camera.": "Scanne das mit der Kamera deines Handys.",
   "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "Emkay öffnet sich und zeigt deinen Skill. Tippe auf Installieren – er bleibt auf diesem Emkay, und Aktualisieren unter Menü → Von GitHub holt deine neueste Version.",
   "Copy link": "Link kopieren",
   "Copied": "Kopiert",
-  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "Das Repository muss öffentlich sein, und nur was du auf GitHub gepusht hast, kommt aufs Handy."
+  "Your skill has to be on GitHub first: your Emkay fetches it from there.": "Dein Skill muss zuerst auf GitHub sein: dein Emkay holt ihn von dort.",
+  "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "Du hast Änderungen, die noch nicht auf GitHub sind ({0}). Dein Emkay bekommt, was auf GitHub ist – erst committen und pushen (Synchronisieren).",
+  "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Scanne ihn mit der Kamera des Handys oder Tablets, auf dem Emkay läuft – oder öffne den Link dort.",
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Das Repository muss öffentlich sein, und nur was du auf GitHub gepusht hast, kommt auf dein Emkay."
 }

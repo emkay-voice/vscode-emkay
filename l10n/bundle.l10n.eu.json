@@ -49,12 +49,12 @@
   "Send to my Emkay": "Bidali nire Emkayra",
   "Publish to GitHub": "Argitaratu GitHub-en",
   "How?": "Nola?",
-  "Your skill has to be on GitHub first: your phone's Emkay fetches it from there.": "Zure skillak GitHub-en egon behar du lehenik: zure telefonoko Emkayk hortik hartzen du.",
   "Send anyway": "Bidali hala ere",
-  "You have changes that are not on GitHub yet ({0}). Your phone gets what is on GitHub – commit and push (Sync) first.": "GitHub-en oraindik ez dauden aldaketak dituzu ({0}). Telefonoak GitHub-en dagoena jasotzen du: egin lehenik commit eta push (Sinkronizatu).",
-  "Scan this with your phone's camera.": "Eskaneatu hau telefonoaren kamerarekin.",
   "Emkay opens and shows your skill. Tap Install – it stays on that Emkay, and Update in menu → From GitHub fetches your newest version.": "Emkay irekitzen da eta zure skilla erakusten du. Ukitu Instalatu: Emkay horretan geratzen da, eta menua → GitHub-etik atalean Eguneratu-k zure bertsio berriena ekartzen du.",
   "Copy link": "Kopiatu esteka",
   "Copied": "Kopiatuta",
-  "The repository must be public, and only what you have pushed to GitHub goes to the phone.": "Repoak publikoa izan behar du, eta GitHub-era bidali (push) duzuna bakarrik iristen da telefonora."
+  "Your skill has to be on GitHub first: your Emkay fetches it from there.": "Zure skillak GitHub-en egon behar du lehenik: zure Emkayk hortik hartzen du.",
+  "You have changes that are not on GitHub yet ({0}). Your Emkay gets what is on GitHub – commit and push (Sync) first.": "GitHub-en oraindik ez dauden aldaketak dituzu ({0}). Zure Emkayk GitHub-en dagoena jasotzen du: egin lehenik commit eta push (Sinkronizatu).",
+  "Scan it with the camera on the phone or tablet that runs Emkay – or open the link there.": "Eskaneatu Emkay dabilen telefono edo tabletaren kamerarekin, edo ireki esteka bertan.",
+  "The repository must be public, and only what you have pushed to GitHub goes to your Emkay.": "Repoak publikoa izan behar du, eta GitHub-era bidali (push) duzuna bakarrik iristen da zure Emkayra."
 }
