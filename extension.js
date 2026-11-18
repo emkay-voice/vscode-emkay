@@ -644,7 +644,7 @@ async function templates() {
       if (Array.isArray(list) && list.length) return list.map((x) => ({ ...x, url: new URL(x.url || `${x.id}.json`, base).toString() }));
     }
   } catch {}
-  return [{ id: "skill", kind: "skill", icon: "👋", repo: "emkay-voice/skill-template", builtIn: true,
+  return [{ id: "skill", kind: "skill", icon: "👋", repo: "emkay-voice/ovos-skill-hello-example", builtIn: true,
             name: { en: "A plain skill", da: "En almindelig skill" },
             description: { en: "Say a sentence, get an answer – the smallest skill there is.",
                            da: "Sig en sætning, få et svar – den mindste skill der findes." } }];

@@ -1,12 +1,13 @@
-// Make template.js from the skill template repository (emkay-voice/skill-template),
+// Make template.js from the skill template repository (emkay-voice/ovos-skill-hello-example),
 // so "Emkay: New skill" writes exactly the files that template has.
 //
 //   node tools/sync-template.mjs ../emkay-skill-template
 //
 // The template's names become placeholders that render() fills in:
-//   ovos-skill-hello.emkay-voice  {{id}}       ovos_skill_hello  {{module}}
-//   ovos-skill-hello              {{name}}     HelloSkill        {{Class}}
-//   emkay-voice/skill-template    {{repo}}     "name": "Hello"   {{Title}}
+//   emkay-voice/ovos-skill-hello-example  {{repo}}   (first: the name is part of it)
+//   ovos-skill-hello-example.emkay-voice  {{id}}     ovos_skill_hello_example  {{module}}
+//   ovos-skill-hello-example              {{name}}   HelloSkill                {{Class}}
+//   "name": "Hello"                       {{Title}}
 import fs from "fs";
 import path from "path";
 
@@ -23,11 +24,11 @@ const files = {};
 })(src);
 
 const placeholders = (s) => s
-  .replaceAll("ovos-skill-hello.emkay-voice", "{{id}}")
-  .replaceAll("ovos_skill_hello", "{{module}}")
-  .replaceAll("ovos-skill-hello", "{{name}}")
+  .replaceAll("emkay-voice/ovos-skill-hello-example", "{{repo}}")
+  .replaceAll("ovos-skill-hello-example.emkay-voice", "{{id}}")
+  .replaceAll("ovos_skill_hello_example", "{{module}}")
+  .replaceAll("ovos-skill-hello-example", "{{name}}")
   .replaceAll("HelloSkill", "{{Class}}")
-  .replaceAll("emkay-voice/skill-template", "{{repo}}")
   .replaceAll('authors = [{name = "emkay-voice"}]', 'authors = [{name = "{{author}}"}]')
   .replaceAll('"name": "Hello"', '"name": "{{Title}}"')
   .replaceAll('"name": "Hej"', '"name": "{{Title}}"');
@@ -35,7 +36,7 @@ const placeholders = (s) => s
 const out = {};
 for (const [p, text] of Object.entries(files)) out[placeholders(p)] = placeholders(text);
 
-const js = `// Made by tools/sync-template.mjs from emkay-voice/skill-template – do not edit by hand.
+const js = `// Made by tools/sync-template.mjs from emkay-voice/ovos-skill-hello-example – do not edit by hand.
 // "Emkay: New skill" writes these files, with the skill's own names filled in.
 const FILES = ${JSON.stringify(out, null, 1)};
 
