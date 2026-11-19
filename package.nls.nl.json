@@ -22,5 +22,6 @@
   "cfg.templates": "Waar *Emkay: Nieuwe skill* zijn sjablonen vindt (`index.json` en een bestand per sjabloon). Gemaakt door [emkay-voice/dev](https://github.com/emkay-voice/dev) uit zijn `templates.json`.",
   "cmd.send": "Naar mijn Emkay sturen (QR-code)",
   "cmd.addLanguage": "Taal toevoegen…",
-  "cmd.help": "Hulp krijgen"
+  "cmd.help": "Hulp krijgen",
+  "cmd.showInGallery": "Tonen in Bekijk mijn skill (dev.emkay.ai)"
 }

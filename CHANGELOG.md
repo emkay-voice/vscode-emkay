@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.8
+
+- **Emkay: Show in See my skill**: puts your skill in [See my skill](https://dev.emkay.ai/gallery/) on dev.emkay.ai – it adds the topic `emkay-skill` to the skill's GitHub repository with your own GitHub sign-in, after asking, and tells you if the repository is private or not on GitHub yet. Run it again to take the skill away. Nothing made from a template is shown unless its owner asks for it.
+
 ## 0.1.7
 
 - *New skill* offers a **PHAL plugin** template too (quiet hours: the device's voice down in the evening, up in the morning – over the bus, with its own settings). A plugin made from it is named `ovos-phal-plugin-<your words>`, with a `…Plugin` class, and runs in Emkay next to the code.

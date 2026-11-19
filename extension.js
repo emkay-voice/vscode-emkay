@@ -566,6 +566,94 @@ async function sendToEmkay(context) {
   out.appendLine("📱 " + t("Send to my Emkay") + ": " + link);
 }
 
+// ------------------------------------------------------- See my skill
+
+const GALLERY_TOPIC = "emkay-skill";
+const GALLERY_URL = "https://dev.emkay.ai/gallery/";
+
+/**
+ * Emkay: Show in See my skill (emkay-voice/dev#2): puts the topic
+ * emkay-skill on the skill's GitHub repository, so dev.emkay.ai/gallery
+ * finds it at its next build (every six hours) – or takes it off again.
+ * Only the owner can: it is the owner's own GitHub login (VS Code's GitHub
+ * sign-in, scope public_repo) that changes the repository's topics. A
+ * repository made from a template does not get the topic by itself, so
+ * nothing shows up unless its owner asks for it here or on GitHub.
+ */
+async function showInGallery() {
+  const skill = await findSkill();
+  if (!skill) {
+    vscode.window.showWarningMessage(t("There is no skill in this folder yet. Make one?"), t("New skill…"))
+      .then((x) => x && vscode.commands.executeCommand("emkay.newSkill"));
+    return;
+  }
+  const gh = await githubOf(skill.root);
+  if (!gh) {
+    const publish = t("Publish to GitHub"), how = t("How?");
+    const pick = await vscode.window.showInformationMessage(
+      t("Your skill has to be on GitHub first: See my skill finds it there."), publish, how);
+    if (pick === publish) {
+      vscode.commands.executeCommand("github.publish").then(undefined, () =>
+        vscode.env.openExternal(vscode.Uri.parse("https://dev.emkay.ai/#github")));
+    } else if (pick === how) {
+      vscode.env.openExternal(vscode.Uri.parse("https://dev.emkay.ai/#github"));
+    }
+    return;
+  }
+  const name = `${gh.owner}/${gh.repo}`;
+  const onGitHub = t("Open on GitHub"), openGallery = t("Open See my skill");
+  const fail = (why) => vscode.window.showErrorMessage(
+    t("Could not change the topics of {0} on GitHub ({1}). You can do it yourself: the ⚙ next to About on its page, topic emkay-skill.", name, why), onGitHub)
+    .then((x) => x && vscode.env.openExternal(vscode.Uri.parse(`https://github.com/${name}`)));
+  let session;
+  try {
+    session = await vscode.authentication.getSession("github", ["public_repo"], { createIfNone: true });
+  } catch (e) {
+    return;   // the sign-in was cancelled
+  }
+  const api = async (method, body) => {
+    const r = await fetch(`https://api.github.com/repos/${name}${body ? "/topics" : ""}`, {
+      method,
+      headers: { accept: "application/vnd.github+json", authorization: `Bearer ${session.accessToken}`,
+                 "content-type": "application/json" },
+      body: body ? JSON.stringify(body) : undefined,
+    });
+    if (!r.ok) throw new Error(r.status === 404 || r.status === 403 ? t("only its owner can") : `HTTP ${r.status}`);
+    return r.json();
+  };
+  let repo;
+  try { repo = await api("GET"); } catch (e) { return fail(e.message); }
+  if (repo.private) {
+    vscode.window.showWarningMessage(
+      t("{0} is private. See my skill only shows public repositories – make it public on GitHub first (Settings → Danger Zone).", name), onGitHub)
+      .then((x) => x && vscode.env.openExternal(vscode.Uri.parse(`https://github.com/${name}/settings`)));
+    return;
+  }
+  const topics = repo.topics || [];
+  if (topics.includes(GALLERY_TOPIC)) {
+    const away = t("Take it away");
+    const pick = await vscode.window.showInformationMessage(
+      t("{0} is in See my skill already (it shows up within a few hours of being added).", name), openGallery, away);
+    if (pick === openGallery) vscode.env.openExternal(vscode.Uri.parse(GALLERY_URL));
+    if (pick !== away) return;
+    try { await api("PUT", { names: topics.filter((x) => x !== GALLERY_TOPIC) }); } catch (e) { return fail(e.message); }
+    vscode.window.showInformationMessage(t("{0} is taken away from See my skill – gone at its next build, within a few hours.", name));
+    out.appendLine("🖼 " + t("Taken away from See my skill: {0}", name));
+    return;
+  }
+  const show = t("Show it");
+  const ok = await vscode.window.showInformationMessage(
+    t("Show {0} in See my skill on dev.emkay.ai?", name),
+    { modal: true, detail: t("Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.") },
+    show);
+  if (ok !== show) return;
+  try { await api("PUT", { names: [...topics, GALLERY_TOPIC] }); } catch (e) { return fail(e.message); }
+  out.appendLine("🖼 " + t("Shown in See my skill: {0}", name));
+  vscode.window.showInformationMessage(
+    t("Done: {0} shows up in See my skill within a few hours.", name), openGallery)
+    .then((x) => x && vscode.env.openExternal(vscode.Uri.parse(GALLERY_URL)));
+}
+
 // ------------------------------------------------------------------ tests
 
 /** The golden utterances as VS Code tests: the Testing view, ✓ and ✗ in the file. */
@@ -919,6 +1007,7 @@ function activate(context) {
   reg("emkay.stop", () => stop());
   reg("emkay.showLog", () => out.show());
   reg("emkay.send", () => sendToEmkay(context));
+  reg("emkay.showInGallery", () => showInGallery());
   reg("emkay.addLanguage", () => addLanguage(context));
   // Help (emkay-voice/dev#3): dev.emkay.ai's help, in VS Code's language
   reg("emkay.help", () => vscode.env.openExternal(vscode.Uri.parse(

@@ -22,5 +22,6 @@
   "cfg.templates": "Dove *Emkay: Nuova skill* trova i suoi modelli (`index.json` e un file per modello). Generato da [emkay-voice/dev](https://github.com/emkay-voice/dev) dal suo `templates.json`.",
   "cmd.send": "Invia al mio Emkay (codice QR)",
   "cmd.addLanguage": "Aggiungi lingua…",
-  "cmd.help": "Ottieni aiuto"
+  "cmd.help": "Ottieni aiuto",
+  "cmd.showInGallery": "Mostra in «Guarda la mia skill» (dev.emkay.ai)"
 }

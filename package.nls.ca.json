@@ -22,5 +22,6 @@
   "cfg.templates": "On troba *Emkay: Skill nova* les plantilles (`index.json` i un fitxer per plantilla). El genera [emkay-voice/dev](https://github.com/emkay-voice/dev) a partir del seu `templates.json`.",
   "cmd.send": "Envia al meu Emkay (codi QR)",
   "cmd.addLanguage": "Afegeix una llengua…",
-  "cmd.help": "Obtén ajuda"
+  "cmd.help": "Obtén ajuda",
+  "cmd.showInGallery": "Mostra a «Mira la meva skill» (dev.emkay.ai)"
 }

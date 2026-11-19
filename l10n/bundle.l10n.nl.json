@@ -72,5 +72,20 @@
   "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} draait in Emkay ({1} s). Het verwerkt: {2}",
   "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Een plugin heeft geen eigen zinnen: praat met Emkay, of stuur het zijn berichten vanuit een skill, en kijk hier naar de bus.",
   "What does your plugin do? A few words, e.g. \"quiet hours\"": "Wat doet je plugin? Een paar woorden, bijv. \"stille uren\"",
-  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Je plugin is gemaakt van {0}. Emkay start hem nu naast de code; de README van de sjabloon zegt wat je kunt proberen."
+  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Je plugin is gemaakt van {0}. Emkay start hem nu naast de code; de README van de sjabloon zegt wat je kunt proberen.",
+  "Your skill has to be on GitHub first: See my skill finds it there.": "Je skill moet eerst op GitHub staan: Bekijk mijn skill vindt hem daar.",
+  "Open on GitHub": "Openen op GitHub",
+  "Open See my skill": "Bekijk mijn skill openen",
+  "Could not change the topics of {0} on GitHub ({1}). You can do it yourself: the ⚙ next to About on its page, topic emkay-skill.": "Kon de onderwerpen (topics) van {0} op GitHub niet wijzigen ({1}). Je kunt het zelf doen: het ⚙ naast About op zijn pagina, onderwerp emkay-skill.",
+  "only its owner can": "alleen de eigenaar kan dat",
+  "{0} is private. See my skill only shows public repositories – make it public on GitHub first (Settings → Danger Zone).": "{0} is privé. Bekijk mijn skill toont alleen openbare repositories – maak het eerst openbaar op GitHub (Settings → Danger Zone).",
+  "Take it away": "Weer weghalen",
+  "{0} is in See my skill already (it shows up within a few hours of being added).": "{0} staat al in Bekijk mijn skill (hij verschijnt binnen een paar uur na het toevoegen).",
+  "{0} is taken away from See my skill – gone at its next build, within a few hours.": "{0} is weggehaald uit Bekijk mijn skill – weg bij de volgende build, binnen een paar uur.",
+  "Taken away from See my skill: {0}": "Weggehaald uit Bekijk mijn skill: {0}",
+  "Show it": "Tonen",
+  "Show {0} in See my skill on dev.emkay.ai?": "{0} tonen in Bekijk mijn skill op dev.emkay.ai?",
+  "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Dan kan iedereen hem zien, proberen in hun Emkay en er een eigen kopie van maken – af of niet; hij is gemarkeerd als niet getest. Hij krijgt het onderwerp emkay-skill op GitHub, en je kunt hem altijd weer weghalen.",
+  "Shown in See my skill: {0}": "Getoond in Bekijk mijn skill: {0}",
+  "Done: {0} shows up in See my skill within a few hours.": "Klaar: {0} verschijnt binnen een paar uur in Bekijk mijn skill."
 }

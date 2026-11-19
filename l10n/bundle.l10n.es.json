@@ -72,5 +72,20 @@
   "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} se ejecuta en Emkay ({1} s). Atiende: {2}",
   "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Un plugin no tiene frases propias: habla con Emkay, o envíale sus mensajes desde una skill, y mira el bus aquí.",
   "What does your plugin do? A few words, e.g. \"quiet hours\"": "¿Qué hace tu plugin? Unas palabras, p. ej. \"horas de silencio\"",
-  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Tu plugin está hecho a partir de {0}. Emkay lo inicia ahora junto al código; el README de la plantilla dice qué probar."
+  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Tu plugin está hecho a partir de {0}. Emkay lo inicia ahora junto al código; el README de la plantilla dice qué probar.",
+  "Your skill has to be on GitHub first: See my skill finds it there.": "Tu skill tiene que estar primero en GitHub: «Mira mi skill» la encuentra allí.",
+  "Open on GitHub": "Abrir en GitHub",
+  "Open See my skill": "Abrir «Mira mi skill»",
+  "Could not change the topics of {0} on GitHub ({1}). You can do it yourself: the ⚙ next to About on its page, topic emkay-skill.": "No se pudieron cambiar los temas (topics) de {0} en GitHub ({1}). Puedes hacerlo tú: el ⚙ junto a About en su página, tema emkay-skill.",
+  "only its owner can": "solo su propietario puede",
+  "{0} is private. See my skill only shows public repositories – make it public on GitHub first (Settings → Danger Zone).": "{0} es privado. «Mira mi skill» solo muestra repositorios públicos – hazlo público en GitHub primero (Settings → Danger Zone).",
+  "Take it away": "Quitarla",
+  "{0} is in See my skill already (it shows up within a few hours of being added).": "{0} ya está en «Mira mi skill» (aparece unas horas después de añadirla).",
+  "{0} is taken away from See my skill – gone at its next build, within a few hours.": "{0} se ha quitado de «Mira mi skill»: desaparece en la próxima compilación, en unas horas.",
+  "Taken away from See my skill: {0}": "Quitada de «Mira mi skill»: {0}",
+  "Show it": "Mostrarla",
+  "Show {0} in See my skill on dev.emkay.ai?": "¿Mostrar {0} en «Mira mi skill» en dev.emkay.ai?",
+  "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Todos podrán verla, probarla en su Emkay y hacer su propia copia – terminada o no; aparece como no probada. Recibe el tema emkay-skill en GitHub y puedes quitarla cuando quieras.",
+  "Shown in See my skill: {0}": "Mostrada en «Mira mi skill»: {0}",
+  "Done: {0} shows up in See my skill within a few hours.": "Hecho: {0} aparecerá en «Mira mi skill» en unas horas."
 }

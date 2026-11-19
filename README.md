@@ -32,6 +32,12 @@ browser: [vscode.dev](https://vscode.dev) and github.dev.
   [Emkay store](https://store.emkay.ai)'s checks, so a sentence passes or
   fails the same in all three. Sentences in another language than Emkay
   speaks are skipped.
+- **Emkay: Show in See my skill** – shows your skill in
+  [See my skill](https://dev.emkay.ai/gallery/) on dev.emkay.ai, where
+  others can try it and make their own copy: it puts the topic
+  `emkay-skill` on the skill's (public) GitHub repository with your GitHub
+  sign-in, after asking. Run it again to take the skill away. A skill made
+  from a template is never shown by itself.
 - **Emkay bus** output (setting `emkay.busLog`): every message on Emkay's
   bus.
 

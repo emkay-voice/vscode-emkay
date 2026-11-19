@@ -22,5 +22,6 @@
   "cfg.templates": "Hvor *Emkay: Ny skill* finder sine skabeloner (`index.json` og en fil pr. skabelon). Laves af [emkay-voice/dev](https://github.com/emkay-voice/dev) ud fra dens `templates.json`.",
   "cmd.send": "Send til min Emkay (QR-kode)",
   "cmd.addLanguage": "Tilføj sprog…",
-  "cmd.help": "Få hjælp"
+  "cmd.help": "Få hjælp",
+  "cmd.showInGallery": "Vis i Se min skill (dev.emkay.ai)"
 }

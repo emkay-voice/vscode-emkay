@@ -72,5 +72,20 @@
   "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} kører i Emkay ({1} s). Den håndterer: {2}",
   "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Et plugin har ingen sætninger selv: tal med Emkay, eller send det dets beskeder fra en skill, og hold øje med bussen her.",
   "What does your plugin do? A few words, e.g. \"quiet hours\"": "Hvad gør dit plugin? Et par ord, fx \"stille timer\"",
-  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Dit plugin er lavet ud fra {0}. Emkay starter det nu ved siden af koden; skabelonens README fortæller, hvad du kan prøve."
+  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Dit plugin er lavet ud fra {0}. Emkay starter det nu ved siden af koden; skabelonens README fortæller, hvad du kan prøve.",
+  "Your skill has to be on GitHub first: See my skill finds it there.": "Din skill skal ligge på GitHub først: Se min skill finder den der.",
+  "Open on GitHub": "Åbn på GitHub",
+  "Open See my skill": "Åbn Se min skill",
+  "Could not change the topics of {0} on GitHub ({1}). You can do it yourself: the ⚙ next to About on its page, topic emkay-skill.": "Kunne ikke ændre emnerne (topics) på {0} på GitHub ({1}). Du kan gøre det selv: ⚙ ved About på dens side, emnet emkay-skill.",
+  "only its owner can": "det kan kun ejeren",
+  "{0} is private. See my skill only shows public repositories – make it public on GitHub first (Settings → Danger Zone).": "{0} er privat. Se min skill viser kun offentlige repositorier – gør det offentligt på GitHub først (Settings → Danger Zone).",
+  "Take it away": "Fjern den igen",
+  "{0} is in See my skill already (it shows up within a few hours of being added).": "{0} er allerede i Se min skill (den dukker op inden for nogle timer, efter den er tilføjet).",
+  "{0} is taken away from See my skill – gone at its next build, within a few hours.": "{0} er fjernet fra Se min skill – væk ved næste opdatering, inden for nogle timer.",
+  "Taken away from See my skill: {0}": "Fjernet fra Se min skill: {0}",
+  "Show it": "Vis den",
+  "Show {0} in See my skill on dev.emkay.ai?": "Vis {0} i Se min skill på dev.emkay.ai?",
+  "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Så kan alle se den, prøve den i deres Emkay og lave deres egen kopi af den – færdig eller ej; den er mærket som ikke testet. Den får emnet emkay-skill på GitHub, og du kan fjerne den igen når som helst.",
+  "Shown in See my skill: {0}": "Vist i Se min skill: {0}",
+  "Done: {0} shows up in See my skill within a few hours.": "Sådan: {0} dukker op i Se min skill inden for nogle timer."
 }

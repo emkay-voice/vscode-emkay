@@ -72,5 +72,20 @@
   "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} Emkay-n dabil ({1} s). Hau kudeatzen du: {2}",
   "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Plugin batek ez du bere esaldirik: hitz egin Emkay-rekin, edo bidali bere mezuak skill batetik, eta begiratu busa hemen.",
   "What does your plugin do? A few words, e.g. \"quiet hours\"": "Zer egiten du zure pluginak? Hitz batzuk, adib. \"ordu isilak\"",
-  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Zure plugina {0}-tik egina dago. Emkay-k kodearen ondoan abiarazten du orain; txantiloiaren README-k dio zer probatu."
+  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Zure plugina {0}-tik egina dago. Emkay-k kodearen ondoan abiarazten du orain; txantiloiaren README-k dio zer probatu.",
+  "Your skill has to be on GitHub first: See my skill finds it there.": "Zure skillak GitHub-en egon behar du lehenik: «Ikusi nire skill-a»k han aurkitzen du.",
+  "Open on GitHub": "Ireki GitHub-en",
+  "Open See my skill": "Ireki «Ikusi nire skill-a»",
+  "Could not change the topics of {0} on GitHub ({1}). You can do it yourself: the ⚙ next to About on its page, topic emkay-skill.": "Ezin izan dira {0}(r)en gaiak (topics) aldatu GitHub-en ({1}). Zuk zeuk egin dezakezu: bere orrian About ondoko ⚙, emkay-skill gaia.",
+  "only its owner can": "jabeak bakarrik egin dezake",
+  "{0} is private. See my skill only shows public repositories – make it public on GitHub first (Settings → Danger Zone).": "{0} pribatua da. «Ikusi nire skill-a»k biltegi publikoak bakarrik erakusten ditu – egin publiko GitHub-en lehenik (Settings → Danger Zone).",
+  "Take it away": "Kendu",
+  "{0} is in See my skill already (it shows up within a few hours of being added).": "{0} «Ikusi nire skill-a» atalean dago dagoeneko (gehitu eta ordu gutxira agertzen da).",
+  "{0} is taken away from See my skill – gone at its next build, within a few hours.": "{0} «Ikusi nire skill-a» ataletik kendu da – hurrengo eraikitzean desagertuko da, ordu gutxiren buruan.",
+  "Taken away from See my skill: {0}": "«Ikusi nire skill-a» ataletik kendua: {0}",
+  "Show it": "Erakutsi",
+  "Show {0} in See my skill on dev.emkay.ai?": "{0} erakutsi «Ikusi nire skill-a» atalean dev.emkay.ai-n?",
+  "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Denek ikusi ahal izango dute, beren Emkayn probatu eta beren kopia egin – amaituta egon ala ez; probatu gabe gisa markatuta dago. GitHub-en emkay-skill gaia jasotzen du, eta nahi duzunean ken dezakezu.",
+  "Shown in See my skill: {0}": "«Ikusi nire skill-a» atalean erakutsia: {0}",
+  "Done: {0} shows up in See my skill within a few hours.": "Eginda: {0} ordu gutxiren buruan agertuko da «Ikusi nire skill-a» atalean."
 }

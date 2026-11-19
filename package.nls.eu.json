@@ -22,5 +22,6 @@
   "cfg.templates": "Non aurkitzen dituen *Emkay: Skill berria*-k txantiloiak (`index.json` eta fitxategi bat txantiloi bakoitzeko). [emkay-voice/dev](https://github.com/emkay-voice/dev)-ek sortzen du bere `templates.json`-etik.",
   "cmd.send": "Bidali nire Emkayra (QR kodea)",
   "cmd.addLanguage": "Gehitu hizkuntza…",
-  "cmd.help": "Lortu laguntza"
+  "cmd.help": "Lortu laguntza",
+  "cmd.showInGallery": "Erakutsi «Ikusi nire skill-a» atalean (dev.emkay.ai)"
 }

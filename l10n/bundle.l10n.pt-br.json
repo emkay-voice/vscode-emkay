@@ -72,5 +72,20 @@
   "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} está rodando no Emkay ({1} s). Ele trata: {2}",
   "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Um plugin não tem frases próprias: fale com o Emkay, ou envie as mensagens dele a partir de uma skill, e acompanhe o barramento aqui.",
   "What does your plugin do? A few words, e.g. \"quiet hours\"": "O que o seu plugin faz? Algumas palavras, ex.: \"horas de silêncio\"",
-  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Seu plugin foi feito a partir de {0}. O Emkay o inicia agora ao lado do código; o README do modelo diz o que experimentar."
+  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Seu plugin foi feito a partir de {0}. O Emkay o inicia agora ao lado do código; o README do modelo diz o que experimentar.",
+  "Your skill has to be on GitHub first: See my skill finds it there.": "Sua skill precisa estar no GitHub primeiro: “Veja minha skill” encontra ela lá.",
+  "Open on GitHub": "Abrir no GitHub",
+  "Open See my skill": "Abrir “Veja minha skill”",
+  "Could not change the topics of {0} on GitHub ({1}). You can do it yourself: the ⚙ next to About on its page, topic emkay-skill.": "Não foi possível mudar os tópicos (topics) de {0} no GitHub ({1}). Você mesmo pode fazer: o ⚙ ao lado de About na página dele, tópico emkay-skill.",
+  "only its owner can": "só o dono pode",
+  "{0} is private. See my skill only shows public repositories – make it public on GitHub first (Settings → Danger Zone).": "{0} é privado. “Veja minha skill” só mostra repositórios públicos – deixe ele público no GitHub primeiro (Settings → Danger Zone).",
+  "Take it away": "Tirar",
+  "{0} is in See my skill already (it shows up within a few hours of being added).": "{0} já está em “Veja minha skill” (aparece algumas horas depois de adicionada).",
+  "{0} is taken away from See my skill – gone at its next build, within a few hours.": "{0} foi tirada de “Veja minha skill” – some no próximo build, em algumas horas.",
+  "Taken away from See my skill: {0}": "Tirada de “Veja minha skill”: {0}",
+  "Show it": "Mostrar",
+  "Show {0} in See my skill on dev.emkay.ai?": "Mostrar {0} em “Veja minha skill” no dev.emkay.ai?",
+  "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Todo mundo vai poder vê-la, testá-la no Emkay e fazer a própria cópia – pronta ou não; ela aparece como não testada. Ela recebe o tópico emkay-skill no GitHub, e você pode tirá-la quando quiser.",
+  "Shown in See my skill: {0}": "Mostrada em “Veja minha skill”: {0}",
+  "Done: {0} shows up in See my skill within a few hours.": "Pronto: {0} aparece em “Veja minha skill” em algumas horas."
 }

@@ -22,5 +22,6 @@
   "cfg.templates": "Where *Emkay: New skill* finds its templates (`index.json` and one file per template). Made by [emkay-voice/dev](https://github.com/emkay-voice/dev) from its `templates.json`.",
   "cmd.send": "Send to my Emkay (QR code)",
   "cmd.addLanguage": "Add language…",
-  "cmd.help": "Get help"
+  "cmd.help": "Get help",
+  "cmd.showInGallery": "Show in See my skill (dev.emkay.ai)"
 }
