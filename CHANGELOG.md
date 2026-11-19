@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6
+
+- **PHAL plugins** run in Emkay too: a folder whose `pyproject.toml` has an `opm.phal` entry point is started the way OpenVoiceOS' PHAL service starts a plugin – its validator is asked, it gets the bus and its `PHAL.<id>` settings – and every save restarts it. The output says which bus messages it handles. Plugins that only use the bus and the network work; ones that need the device's hardware (sound cards, GPIO, system services) can't in a browser.
+
 ## 0.1.5
 
 - **Emkay: Get help** opens dev.emkay.ai's help, in VS Code's language: what to do when the skill doesn't answer or another skill does, where the tests and the log are, where to ask (OpenVoiceOS on Matrix, Emkay Dev's discussions) and where to read (OVOS' manual, the sentence template grammar).

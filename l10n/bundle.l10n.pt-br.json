@@ -68,5 +68,7 @@
   "Commit message to use: {0}": "Mensagem de commit para usar: {0}",
   "{0} added: {1} files, a machine's draft. Have someone who speaks {0} read it through. {2} lines were left out (see Emkay's log).": "{0} adicionado: {1} arquivos, um rascunho de máquina. Peça para alguém que fala {0} revisar. {2} linhas ficaram de fora (veja o registro do Emkay).",
   "Which language?": "Qual idioma?",
-  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Traduzindo para {0} neste dispositivo – na primeira vez, o modelo do idioma é baixado (100–300 MB)…"
+  "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Traduzindo para {0} neste dispositivo – na primeira vez, o modelo do idioma é baixado (100–300 MB)…",
+  "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} está rodando no Emkay ({1} s). Ele trata: {2}",
+  "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Um plugin não tem frases próprias: fale com o Emkay, ou envie as mensagens dele a partir de uma skill, e acompanhe o barramento aqui."
 }

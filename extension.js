@@ -68,11 +68,15 @@ async function exists(uri) {
 async function findSkill() {
   for (const ws of vscode.workspace.workspaceFolders || []) {
     const root = ws.uri;
-    let skillId = null, pkg = null, requirements = [];
+    let skillId = null, pkg = null, requirements = [], kind = "skill", entry = "";
     const pyproject = await readText(vscode.Uri.joinPath(root, "pyproject.toml"));
     if (pyproject) {
       const ep = pyproject.match(/\[project\.entry-points\.["']?opm\.skill["']?\]\s*\n\s*["']?([^"'=\s]+)["']?\s*=\s*["']([^"':]+)(?::[^"']*)?["']/);
       if (ep) { skillId = ep[1]; pkg = ep[2]; }
+      // a PHAL plugin: "<plugin id>" = "<package>.<module>:<Class>"; Emkay
+      // starts it from its package folder as the PHAL service would
+      const phal = !ep && pyproject.match(/\[project\.entry-points\.["']?opm\.phal["']?\]\s*\n\s*["']?([^"'=\s]+)["']?\s*=\s*["']([^"':]+):([A-Za-z_][A-Za-z0-9_]*)["']/);
+      if (phal) { skillId = phal[1]; pkg = phal[2].split(".")[0]; kind = "plugin"; entry = `${phal[2]}:${phal[3]}`; }
       const deps = pyproject.match(/^dependencies\s*=\s*\[([\s\S]*?)\]/m);
       if (deps) requirements = [...deps[1].matchAll(/["']([^"']+)["']/g)].map((m) => m[1]);
     }
@@ -102,7 +106,7 @@ async function findSkill() {
       const name = folder.path.split("/").pop().replace(/_/g, "-");
       skillId = `${name}.dev`;
     }
-    return { root, folder, skillId, requirements: [...new Set(requirements)] };
+    return { root, folder, skillId, kind, entry, requirements: [...new Set(requirements)] };
   }
   return null;
 }
@@ -389,10 +393,15 @@ async function run(context, { quiet = false } = {}) {
     const files = await filesOf(skill.folder);
     if (!p.ready) out.appendLine(t("Waiting for Emkay to start…"));
     setStatus("$(sync~spin) " + t("Emkay: loading {0}", skill.skillId));
-    const r = await p.op("load", { skillId: skill.skillId, files, requirements: skill.requirements });
+    const r = await p.op("load", { skillId: skill.skillId, files, requirements: skill.requirements,
+                                    kind: skill.kind, entry: skill.entry });
     lastRun = { skillId: skill.skillId, ok: r.ok };
     for (const line of r.log || []) out.appendLine("   " + line);
-    if (r.ok) {
+    if (r.ok && skill.kind === "plugin") {
+      out.appendLine(t("✓ {0} runs in Emkay ({1} s). It handles: {2}", skill.skillId, r.seconds, (r.listens || []).join(", ") || "–"));
+      out.appendLine("🔌 " + t("A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here."));
+      if (!quiet) vscode.window.setStatusBarMessage(t("✓ {0} runs in Emkay", skill.skillId), 4000);
+    } else if (r.ok) {
       out.appendLine(t("✓ {0} runs in Emkay ({1} s). Intents: {2}", skill.skillId, r.seconds, (r.intents || []).join(", ") || "–"));
       if (!quiet) vscode.window.setStatusBarMessage(t("✓ {0} runs in Emkay", skill.skillId), 4000);
       // what to say: in the language Emkay speaks, which is easy to get wrong
