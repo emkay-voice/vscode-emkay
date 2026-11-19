@@ -70,5 +70,7 @@
   "Which language?": "Hvilket sprog?",
   "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Oversætter til {0} her på enheden – første gang hentes sprogets model (100–300 MB)…",
   "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} kører i Emkay ({1} s). Den håndterer: {2}",
-  "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Et plugin har ingen sætninger selv: tal med Emkay, eller send det dets beskeder fra en skill, og hold øje med bussen her."
+  "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Et plugin har ingen sætninger selv: tal med Emkay, eller send det dets beskeder fra en skill, og hold øje med bussen her.",
+  "What does your plugin do? A few words, e.g. \"quiet hours\"": "Hvad gør dit plugin? Et par ord, fx \"stille timer\"",
+  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Dit plugin er lavet ud fra {0}. Emkay starter det nu ved siden af koden; skabelonens README fortæller, hvad du kan prøve."
 }

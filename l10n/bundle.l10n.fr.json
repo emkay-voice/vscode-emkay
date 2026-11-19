@@ -70,5 +70,7 @@
   "Which language?": "Quelle langue ?",
   "Translating into {0} on this device – the first time, its model is downloaded (100–300 MB)…": "Traduction en {0} sur cet appareil – la première fois, le modèle de la langue est téléchargé (100 à 300 Mo)…",
   "✓ {0} runs in Emkay ({1} s). It handles: {2}": "✓ {0} tourne dans Emkay ({1} s). Il traite : {2}",
-  "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Un plugin n'a pas de phrases à lui : parle à Emkay, ou envoie-lui ses messages depuis une skill, et observe le bus ici."
+  "A plugin has no sentences of its own: talk to Emkay, or send it its messages with a skill, and watch the bus here.": "Un plugin n'a pas de phrases à lui : parle à Emkay, ou envoie-lui ses messages depuis une skill, et observe le bus ici.",
+  "What does your plugin do? A few words, e.g. \"quiet hours\"": "Que fait ton plugin ? Quelques mots, p. ex. « heures calmes »",
+  "Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.": "Ton plugin est fait à partir de {0}. Emkay le lance maintenant à côté du code ; le README du modèle dit quoi essayer."
 }

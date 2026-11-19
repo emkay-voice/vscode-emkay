@@ -665,8 +665,20 @@ const inLang = (o) => {
 };
 
 /** A template's files with the new skill's names filled in: {path: Uint8Array}. */
-async function templateFiles(tpl, name, author) {
+/** The names a template gets: a skill's (template.names), or a PHAL plugin's –
+ *  ovos-phal-plugin-<words>, its entry point named the same, a …Plugin class. */
+function namesFor(tpl, name, author) {
   const n = template.names(name, author);
+  if (tpl.kind !== "plugin") return n;
+  const words = n.name.replace(/^ovos-skill-/, "").replace(/^ovos-phal-plugin-/, "").split("-").filter(Boolean);
+  const pkg = `ovos-phal-plugin-${words.join("-")}`;
+  const Words = words.map((w) => w[0].toUpperCase() + w.slice(1));
+  return { ...n, name: pkg, module: pkg.replace(/-/g, "_"), id: pkg,
+           Class: Words.join("") + "Plugin", Title: Words.join(" "), repo: `${author}/${pkg}` };
+}
+
+async function templateFiles(tpl, name, author) {
+  const n = namesFor(tpl, name, author);
   const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (m, k) => n[k] ?? m);
   const out = {};
   if (tpl.builtIn) {
@@ -702,7 +714,8 @@ async function newSkill() {
   }
   const name = await vscode.window.showInputBox({
     title: t("New skill"),
-    prompt: t("What is your skill about? A few words, e.g. \"coffee facts\""),
+    prompt: tpl.kind === "plugin" ? t("What does your plugin do? A few words, e.g. \"quiet hours\"")
+      : t("What is your skill about? A few words, e.g. \"coffee facts\""),
     value: tpl.id === "skill" || !tpl.id ? "hello" : tpl.id,
     validateInput: (v) => /^[A-Za-z0-9][A-Za-z0-9 _-]{0,40}$/.test(v.trim()) ? null : t("Letters, numbers, spaces and dashes"),
   });
@@ -744,6 +757,8 @@ async function newSkill() {
   if (tpl.builtIn || tpl.kind === "skill" || tpl.id === "skill") {
     const first = intent ? firstOption(new TextDecoder().decode(files[intent]).split(/\r?\n/).find((l) => l.trim() && !l.startsWith("#")) || "") : "";
     vscode.window.showInformationMessage(t("Your skill is made. Emkay starts next to it now – then type \"{0}\" below Emkay.", first || template.firstSentence(name.trim(), vscode.env.language)));
+  } else if (tpl.kind === "plugin") {
+    vscode.window.showInformationMessage(t("Your plugin is made from {0}. Emkay starts it next to the code now; the template's README says what to try.", inLang(tpl.name)));
   } else {
     vscode.window.showInformationMessage(t("Your skill is made from {0}. Emkay starts next to it now; the template's README says what to try.", inLang(tpl.name)));
   }

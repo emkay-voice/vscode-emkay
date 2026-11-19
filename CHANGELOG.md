@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.7
+
+- *New skill* offers a **PHAL plugin** template too (quiet hours: the device's voice down in the evening, up in the morning – over the bus, with its own settings). A plugin made from it is named `ovos-phal-plugin-<your words>`, with a `…Plugin` class, and runs in Emkay next to the code.
+
 ## 0.1.6
 
 - **PHAL plugins** run in Emkay too: a folder whose `pyproject.toml` has an `opm.phal` entry point is started the way OpenVoiceOS' PHAL service starts a plugin – its validator is asked, it gets the bus and its `PHAL.<id>` settings – and every save restarts it. The output says which bus messages it handles. Plugins that only use the bus and the network work; ones that need the device's hardware (sound cards, GPIO, system services) can't in a browser.

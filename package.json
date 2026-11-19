@@ -2,7 +2,7 @@
   "name": "emkay-dev",
   "displayName": "Emkay Dev",
   "description": "Write an OpenVoiceOS skill and talk to it at once: Emkay runs next to your code, in VS Code – also in the browser (vscode.dev, github.dev).",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "publisher": "emkay-voice",
   "license": "Apache-2.0",
   "icon": "media/icon.png",
