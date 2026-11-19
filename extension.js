@@ -896,6 +896,9 @@ function activate(context) {
   reg("emkay.showLog", () => out.show());
   reg("emkay.send", () => sendToEmkay(context));
   reg("emkay.addLanguage", () => addLanguage(context));
+  // Help (emkay-voice/dev#3): dev.emkay.ai's help, in VS Code's language
+  reg("emkay.help", () => vscode.env.openExternal(vscode.Uri.parse(
+    `https://dev.emkay.ai/?lang=${encodeURIComponent(vscode.env.language)}#help`)));
   reg("emkay.say", async (text) => {
     if (typeof text !== "string") {
       text = await vscode.window.showInputBox({ title: t("Say to Emkay"), prompt: t("Type what you would say") });

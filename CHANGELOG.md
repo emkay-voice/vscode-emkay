@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- **Emkay: Get help** opens dev.emkay.ai's help, in VS Code's language: what to do when the skill doesn't answer or another skill does, where the tests and the log are, where to ask (OpenVoiceOS on Matrix, Emkay Dev's discussions) and where to read (OVOS' manual, the sentence template grammar).
+
 ## 0.1.4
 
 - **Emkay: Add language…**: translates your skill's English into one of Emkay's languages – on your own device, in Emkay next to the code, with the models and the rules OpenVoiceOS' ovos-localize uses: `{slots}` are never touched, each `(a|b)` alternative is translated on its own, a line that does not come back whole is left out (and listed with the reason), and ovos-localize's checks run on the result. The first time, the language's model is downloaded (about 100–300 MB) and kept. It writes `locale/<language>/` and test sentences for it, and suggests OVOS' commit message for a machine's translation – have someone who speaks the language read it through.

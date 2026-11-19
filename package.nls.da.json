@@ -21,5 +21,6 @@
   "walk.test.description": "Testsætningerne i test/end2end/ sendes til Emkay en ad gangen; hver skal nå din skill. De samme test, som Emkay-storen og ovos-tui-client kører.\n[Test den](command:emkay.test)",
   "cfg.templates": "Hvor *Emkay: Ny skill* finder sine skabeloner (`index.json` og en fil pr. skabelon). Laves af [emkay-voice/dev](https://github.com/emkay-voice/dev) ud fra dens `templates.json`.",
   "cmd.send": "Send til min Emkay (QR-kode)",
-  "cmd.addLanguage": "Tilføj sprog…"
+  "cmd.addLanguage": "Tilføj sprog…",
+  "cmd.help": "Få hjælp"
 }

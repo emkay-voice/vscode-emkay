@@ -21,5 +21,6 @@
   "walk.test.description": "De testzinnen in test/end2end/ gaan één voor één naar Emkay; elke zin moet je skill bereiken. Dezelfde tests als de Emkay-store en ovos-tui-client.\n[Testen](command:emkay.test)",
   "cfg.templates": "Waar *Emkay: Nieuwe skill* zijn sjablonen vindt (`index.json` en een bestand per sjabloon). Gemaakt door [emkay-voice/dev](https://github.com/emkay-voice/dev) uit zijn `templates.json`.",
   "cmd.send": "Naar mijn Emkay sturen (QR-code)",
-  "cmd.addLanguage": "Taal toevoegen…"
+  "cmd.addLanguage": "Taal toevoegen…",
+  "cmd.help": "Hulp krijgen"
 }
