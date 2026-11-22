@@ -30,6 +30,7 @@ const placeholders = (s) => s
   .replaceAll("ovos-skill-hello-example", "{{name}}")
   .replaceAll("HelloSkill", "{{Class}}")
   .replaceAll('authors = [{name = "emkay-voice"}]', 'authors = [{name = "{{author}}"}]')
+  .replaceAll('"author": "emkay-voice"', '"author": "{{author}}"')
   .replaceAll('"name": "Hello"', '"name": "{{Title}}"')
   .replaceAll('"name": "Hej"', '"name": "{{Title}}"');
 

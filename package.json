@@ -214,5 +214,13 @@
     "vscode:prepublish": "node tools/build.mjs",
     "package": "npx --yes @vscode/vsce package --no-dependencies"
   },
-  "author": "Andreas Lorensen"
+  "author": {
+    "name": "emkay-voice",
+    "url": "https://emkay.ai"
+  },
+  "contributors": [
+    {
+      "name": "Andreas Lorensen"
+    }
+  ]
 }
