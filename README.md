@@ -1,4 +1,4 @@
-# Emkay Dev
+# Emkay Code
 
 Write an [OpenVoiceOS](https://openvoiceos.org) skill and talk to it a
 second later. [Emkay](https://emkay.ai) – a full OpenVoiceOS that runs in a
@@ -6,7 +6,7 @@ web page – opens next to your code, runs your skill, and runs it again
 every time you save. Works in VS Code on your PC, in Codespaces, and in the
 browser: [vscode.dev](https://vscode.dev) and github.dev.
 
-**👉 Getting started, step by step: <https://dev.emkay.ai>**
+**👉 Getting started, step by step: <https://dev.emkay.ai/code>**
 
 ## What it does
 
@@ -15,8 +15,8 @@ browser: [vscode.dev](https://vscode.dev) and github.dev.
   templates come from [dev.emkay.ai](https://dev.emkay.ai), one repository
   each; without a connection, the plain skill built into the extension.
 - **A skill from [Emkay Blocks](https://blocks.emkay.ai)** – *Continue in
-  Emkay Dev* there puts the skill on the clipboard (and downloads it as a
-  zip). Open an empty folder, and Emkay Dev asks whether you come from
+  Emkay Code →* there puts the skill on the clipboard (and downloads it as a
+  zip). Open an empty folder, and Emkay Code asks whether you come from
   Blocks: the same skill, with all its code, and Emkay next to it. Also in
   *New skill…* (*From Emkay Blocks*) and as **Emkay: Open a skill from
   Emkay Blocks…**, which takes the zip too. Your own blocks are in
@@ -82,8 +82,8 @@ file runs on a PC and in a browser; `tools/build.mjs` puts it in one file
 ```
 npm run sync-template   # template.js from ../emkay-skill-template
 npm run build           # dist/extension.js
-npm run package         # emkay-dev-<version>.vsix
+npm run package         # emkay-code-<version>.vsix
 ```
 
-Part of [Emkay Dev](https://github.com/emkay-voice/emkay/issues/43).
+Part of [Emkay Dev](https://dev.emkay.ai) – making skills for Emkay, with blocks ([Emkay Blocks](https://blocks.emkay.ai)) or with code (this). Until 0.1.9 this extension was called Emkay Dev (`emkay-voice.emkay-dev`).
 Apache 2.0.

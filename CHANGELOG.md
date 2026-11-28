@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+- **Emkay Code** – the extension's new name (and id: `emkay-voice.emkay-code`). *Emkay Dev* is now what it is part of: making skills for Emkay, with blocks ([Emkay Blocks](https://blocks.emkay.ai)) or with code (this) – dev.emkay.ai. Until 0.1.9 the extension was `emkay-voice.emkay-dev`; uninstall that one.
+
 ## 0.1.9
 
 - **A skill from [Emkay Blocks](https://blocks.emkay.ai)**: *Continue in Emkay Dev* in Blocks puts the skill on the clipboard, and in an empty folder Emkay Dev asks whether you come from Blocks – the skill's files go into the folder, `__init__.py` and `my_blocks.py` open, and Emkay starts next to them. With no folder open yet, the skill waits while you open one. Also *From Emkay Blocks* in *New skill…*, and **Emkay: Open a skill from Emkay Blocks…**, which takes the zip Blocks downloads too (emkay-voice/vscode-emkay#4).

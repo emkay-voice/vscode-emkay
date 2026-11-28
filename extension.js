@@ -1,4 +1,4 @@
-// Emkay Dev – write an OpenVoiceOS skill and talk to it at once.
+// Emkay Code – write an OpenVoiceOS skill and talk to it at once.
 //
 // Emkay (OpenVoiceOS in the browser, https://app.emkay.ai) runs in a panel
 // next to your code, opened with ?dev. This extension sends it your skill as
@@ -785,8 +785,8 @@ async function templateFiles(tpl, name, author) {
 
 // --------------------------------------------- a skill from Emkay Blocks
 
-// Emkay Blocks (https://blocks.emkay.ai, emkay-voice/vscode-emkay#4) makes a
-// normal skill from blocks. "Continue in Emkay Dev" there puts it on the
+// Emkay Blocks (https://blocks.emkay.ai, emkay-voice/code#4) makes a
+// normal skill from blocks. "Continue in Emkay Code" there puts it on the
 // clipboard as {emkayBlocksSkill: 1, name, files: {path: text}} and downloads
 // the same files as a zip; here they become the files of the folder. With no
 // folder open yet, the skill waits in globalState while one is opened.
@@ -838,7 +838,7 @@ async function fromBlocks(context) {
   if (!skill) {
     const zip = t("Choose the zip…");
     const pick = await vscode.window.showInformationMessage(
-      t("There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Dev in Blocks again – or choose the zip Blocks downloaded."), zip);
+      t("There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Code in Blocks again – or choose the zip Blocks downloaded."), zip);
     if (pick !== zip) return;
     const uris = await vscode.window.showOpenDialog({ canSelectMany: false, filters: { zip: ["zip"] }, title: t("Open a skill from Emkay Blocks") });
     if (!uris?.length) return;
@@ -853,7 +853,7 @@ async function fromBlocks(context) {
     // opening a folder starts VS Code's window again: the skill waits here meanwhile
     await context.globalState.update(WAITING, { name: skill.name || "", files: skill.files, at: Date.now() });
     const pick = await vscode.window.showInformationMessage(
-      t("Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Dev puts it there when the folder is open."), t("Open folder…"));
+      t("Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Code puts it there when the folder is open."), t("Open folder…"));
     if (pick) await vscode.commands.executeCommand("workbench.action.files.openFolder");
     return;
   }
@@ -888,9 +888,9 @@ async function putBlocksSkill(context, ws, skill) {
 }
 
 /**
- * When Emkay Dev starts: a skill from Blocks waiting for this folder is put
+ * When Emkay Code starts: a skill from Blocks waiting for this folder is put
  * in it (after asking); and in an empty folder – where a skill is about to
- * be made – Emkay Dev asks whether you come from Blocks. It reads the
+ * be made – Emkay Code asks whether you come from Blocks. It reads the
  * clipboard only if you say so, and says nothing in any other window.
  */
 async function offerBlocks(context) {
