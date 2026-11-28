@@ -99,5 +99,12 @@
   "Open the skill from Blocks": "Ireki Blocks-eko skilla",
   "Coming from Emkay Blocks? Open the skill you made there.": "Emkay Blocks-etik zatoz? Ireki han egin zenuen skilla.",
   "From Emkay Blocks": "Emkay Blocks-etik",
-  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "blocks.emkay.ai-n blokeekin egin zenuen skilla: skill bera, bere kode guztiarekin."
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "blocks.emkay.ai-n blokeekin egin zenuen skilla: skill bera, bere kode guztiarekin.",
+  "Open a skill first – Insert a block puts it into the skill's my_blocks.py.": "Ireki skill bat lehenik: Txertatu bloke batek skill-aren my_blocks.py-n jartzen du.",
+  "Couldn't fetch Emkay Blocks' blocks: {0}": "Ezin izan dira Emkay Blocks-en blokeak eskuratu: {0}",
+  "Insert a block from Emkay Blocks": "Txertatu Emkay Blocks-eko bloke bat",
+  "Each block is a small Python function – search by what it does": "Bloke bakoitza Python funtzio txiki bat da: bilatu egiten duenaren arabera",
+  "{0} is already in my_blocks.py.": "{0} dagoeneko my_blocks.py-n dago.",
+  "Copy the call": "Kopiatu deia",
+  "{0} is in my_blocks.py. Call it as {1} – with “from . import my_blocks” at the top of __init__.py.": "{0} my_blocks.py-n dago. Deitu {1} gisa, __init__.py-ren goialdean «from . import my_blocks» jarrita."
 }

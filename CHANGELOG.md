@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- **Emkay: Insert a block from Emkay Blocks…** – Emkay Blocks' function blocks (from the web, days until, today's date, remember …) are small Python functions, the same as a block you make in Blocks. Pick one, searching by what it does in your language, and it goes into the skill's `my_blocks.py` with what it does as its docstring, and its packages into `pyproject.toml`; call it as `my_blocks.<name>(self, …)`. The blocks come from [blocks.emkay.ai/library.json](https://blocks.emkay.ai/library.json).
+
 ## 0.2.0
 
 - **Emkay Code** – the extension's new name (and id: `emkay-voice.emkay-code`). *Emkay Dev* is now what it is part of: making skills for Emkay, with blocks ([Emkay Blocks](https://blocks.emkay.ai)) or with code (this) – dev.emkay.ai. Until 0.1.9 the extension was `emkay-voice.emkay-dev`; uninstall that one.

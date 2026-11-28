@@ -24,5 +24,6 @@
   "cmd.addLanguage": "Taal toevoegen…",
   "cmd.help": "Hulp krijgen",
   "cmd.showInGallery": "Tonen in Bekijk mijn skill (dev.emkay.ai)",
-  "cmd.fromBlocks": "Een skill uit Emkay Blocks openen…"
+  "cmd.fromBlocks": "Een skill uit Emkay Blocks openen…",
+  "cmd.insertBlock": "Blok invoegen…"
 }

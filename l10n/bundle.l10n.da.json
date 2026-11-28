@@ -99,5 +99,12 @@
   "Open the skill from Blocks": "Åbn skillen fra Blocks",
   "Coming from Emkay Blocks? Open the skill you made there.": "Kommer du fra Emkay Blocks? Åbn den skill, du har lavet der.",
   "From Emkay Blocks": "Fra Emkay Blocks",
-  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "Den skill, du har lavet med blokke på blocks.emkay.ai – den samme skill, med al dens kode."
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "Den skill, du har lavet med blokke på blocks.emkay.ai – den samme skill, med al dens kode.",
+  "Open a skill first – Insert a block puts it into the skill's my_blocks.py.": "Åbn en skill først – Indsæt en blok sætter den ind i skillens my_blocks.py.",
+  "Couldn't fetch Emkay Blocks' blocks: {0}": "Kunne ikke hente Emkay Blocks' blokke: {0}",
+  "Insert a block from Emkay Blocks": "Indsæt en blok fra Emkay Blocks",
+  "Each block is a small Python function – search by what it does": "Hver blok er en lille Python-funktion – søg på det, den gør",
+  "{0} is already in my_blocks.py.": "{0} er allerede i my_blocks.py.",
+  "Copy the call": "Kopiér kaldet",
+  "{0} is in my_blocks.py. Call it as {1} – with “from . import my_blocks” at the top of __init__.py.": "{0} er i my_blocks.py. Kald den som {1} – med “from . import my_blocks” øverst i __init__.py."
 }

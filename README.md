@@ -21,6 +21,11 @@ browser: [vscode.dev](https://vscode.dev) and github.dev.
   *New skill…* (*From Emkay Blocks*) and as **Emkay: Open a skill from
   Emkay Blocks…**, which takes the zip too. Your own blocks are in
   `my_blocks.py`; the blocks themselves in `blocks.json`.
+- **Emkay: Insert a block from Emkay Blocks…** – Blocks' function blocks
+  (from the web, days until, today's date, remember …) are small Python
+  functions, like a block you make in Blocks. Pick one – search by what it
+  does, in your language – and it goes into the skill's `my_blocks.py`,
+  its packages into `pyproject.toml`. Call it as `my_blocks.<name>(self, …)`.
 - **Emkay: Run the skill in Emkay** (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd>,
   or ▷ in the editor title) – Emkay opens in a panel next to the code and
   loads the skill from its files, the way ovos-core loads a skill from a

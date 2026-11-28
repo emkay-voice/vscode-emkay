@@ -24,5 +24,6 @@
   "cmd.addLanguage": "Afegeix una llengua…",
   "cmd.help": "Obtén ajuda",
   "cmd.showInGallery": "Mostra a «Mira la meva skill» (dev.emkay.ai)",
-  "cmd.fromBlocks": "Obre una skill de l'Emkay Blocks…"
+  "cmd.fromBlocks": "Obre una skill de l'Emkay Blocks…",
+  "cmd.insertBlock": "Insereix un bloc…"
 }

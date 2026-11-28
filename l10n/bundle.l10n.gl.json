@@ -99,5 +99,12 @@
   "Open the skill from Blocks": "Abrir a skill do Blocks",
   "Coming from Emkay Blocks? Open the skill you made there.": "Vés do Emkay Blocks? Abre a skill que fixeches alí.",
   "From Emkay Blocks": "Dende o Emkay Blocks",
-  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "A skill que fixeches con bloques en blocks.emkay.ai: a mesma skill, con todo o seu código."
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "A skill que fixeches con bloques en blocks.emkay.ai: a mesma skill, con todo o seu código.",
+  "Open a skill first – Insert a block puts it into the skill's my_blocks.py.": "Abre primeiro unha skill: Inserir un bloque pono no my_blocks.py da skill.",
+  "Couldn't fetch Emkay Blocks' blocks: {0}": "Non se puideron obter os bloques de Emkay Blocks: {0}",
+  "Insert a block from Emkay Blocks": "Inserir un bloque de Emkay Blocks",
+  "Each block is a small Python function – search by what it does": "Cada bloque é unha pequena función de Python: busca polo que fai",
+  "{0} is already in my_blocks.py.": "{0} xa está en my_blocks.py.",
+  "Copy the call": "Copiar a chamada",
+  "{0} is in my_blocks.py. Call it as {1} – with “from . import my_blocks” at the top of __init__.py.": "{0} está en my_blocks.py. Chámao como {1}, con «from . import my_blocks» ao comezo de __init__.py."
 }

@@ -1120,6 +1120,79 @@ async function updateContext() {
   return skill;
 }
 
+// ------------------------------------------------------------ Emkay Blocks' blocks
+// Emkay Blocks' function blocks (blocks.emkay.ai/library.json) are small
+// Python functions with a name and inputs in every language – the same as a
+// block someone makes in Blocks. Insert a block… puts one into the skill's
+// my_blocks.py, where a skill made in Blocks has its own, and its packages
+// into pyproject.toml; my_blocks.<name>(self, …) calls it.
+const BLOCKS_LIBRARY = "https://blocks.emkay.ai/library.json";
+
+/** A text in VS Code's language from {"da-dk": …, "en-us": …}. */
+function inOurLanguage(texts) {
+  const lang = (vscode.env.language || "en").toLowerCase();
+  const keys = Object.keys(texts || {});
+  const key = keys.find((k) => k === lang) || keys.find((k) => k.startsWith(`${lang}-`)) ||
+    keys.find((k) => k.split("-")[0] === lang.split("-")[0]) || "en-us";
+  return (texts || {})[key] || (texts || {})["en-us"] || "";
+}
+
+async function insertBlock() {
+  const skill = await findSkill();
+  if (!skill) {
+    vscode.window.showWarningMessage(t("Open a skill first – Insert a block puts it into the skill's my_blocks.py."));
+    return;
+  }
+  let lib;
+  try {
+    const r = await fetch(BLOCKS_LIBRARY, { cache: "no-cache" });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    lib = await r.json();
+  } catch (e) {
+    vscode.window.showErrorMessage(t("Couldn't fetch Emkay Blocks' blocks: {0}", e.message || String(e)));
+    return;
+  }
+  const picked = await vscode.window.showQuickPick(lib.blocks.map((b) => ({
+    label: `$(symbol-function) ${inOurLanguage(b.name)}`,
+    description: `${b.id}(${["skill", ...b.inputs.map((i) => i.key)].join(", ")})`,
+    detail: inOurLanguage(b.description), block: b,
+  })), { title: t("Insert a block from Emkay Blocks"), placeHolder: t("Each block is a small Python function – search by what it does"),
+         matchOnDescription: true, matchOnDetail: true });
+  if (!picked) return;
+  const b = picked.block;
+
+  // the function, as Blocks writes it: (skill, inputs…), what it does as its docstring
+  const doc = (inOurLanguage(b.description) || b.doc || "").replace(/"""/g, "'''");
+  const body = b.code.split("\n").map((l) => (l ? `    ${l}` : "")).join("\n");
+  const fn = `def ${b.id}(${["skill", ...b.inputs.map((i) => i.key)].join(", ")}):\n    """${doc}"""\n${body}\n`;
+  const file = vscode.Uri.joinPath(skill.folder, "my_blocks.py");
+  let text = await readText(file);
+  if (text && new RegExp(`^def\\s+${b.id}\\s*\\(`, "m").test(text)) {
+    vscode.window.showInformationMessage(t("{0} is already in my_blocks.py.", b.id));
+  } else {
+    text = text ? `${text.replace(/\s*$/, "")}\n\n\n${fn}`
+      : `"""The skill's own blocks: small functions, as Emkay Blocks makes them.\n\nEach gets the skill first (skill.speak(...), skill.settings, skill.gui), then\nits inputs; one that gives a value returns it."""\n\n\n${fn}`;
+    await vscode.workspace.fs.writeFile(file, new TextEncoder().encode(text));
+  }
+  // its packages into pyproject.toml's dependencies
+  const pp = vscode.Uri.joinPath(skill.root, "pyproject.toml");
+  const toml = await readText(pp);
+  const need = (b.packages || []).filter((p) => !skill.requirements.some((r) => r.split(/[<>=!~ \[]/)[0].toLowerCase() === p.toLowerCase()));
+  if (toml && need.length) {
+    const next = toml.replace(/^(dependencies\s*=\s*\[)([\s\S]*?)(\])/m, (m, a, list, z) =>
+      `${a}${list.replace(/\s*$/, "")}${list.trim() && !list.trim().endsWith(",") ? "," : ""}\n${need.map((p) => `    "${p}",`).join("\n")}\n${z}`);
+    if (next !== toml) await vscode.workspace.fs.writeFile(pp, new TextEncoder().encode(next));
+  }
+  const doc2 = await vscode.workspace.openTextDocument(file);
+  const line = doc2.getText().split("\n").findIndex((l) => l.startsWith(`def ${b.id}(`));
+  await vscode.window.showTextDocument(doc2, { selection: new vscode.Range(Math.max(line, 0), 0, Math.max(line, 0), 0) });
+  const call = `my_blocks.${b.id}(${["self", ...b.inputs.map((i) => i.key)].join(", ")})`;
+  const copy = t("Copy the call");
+  const answer = await vscode.window.showInformationMessage(
+    t("{0} is in my_blocks.py. Call it as {1} – with “from . import my_blocks” at the top of __init__.py.", inOurLanguage(b.name), call), copy);
+  if (answer === copy) await vscode.env.clipboard.writeText(call);
+}
+
 function activate(context) {
   out = vscode.window.createOutputChannel("Emkay");
   busOut = vscode.window.createOutputChannel("Emkay bus");
@@ -1139,6 +1212,7 @@ function activate(context) {
   reg("emkay.send", () => sendToEmkay(context));
   reg("emkay.showInGallery", () => showInGallery());
   reg("emkay.addLanguage", () => addLanguage(context));
+  reg("emkay.insertBlock", () => insertBlock());
   // Help (emkay-voice/dev#3): dev.emkay.ai's help, in VS Code's language
   reg("emkay.help", () => vscode.env.openExternal(vscode.Uri.parse(
     `https://dev.emkay.ai/?lang=${encodeURIComponent(vscode.env.language)}#help`)));

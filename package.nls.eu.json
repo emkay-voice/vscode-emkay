@@ -24,5 +24,6 @@
   "cmd.addLanguage": "Gehitu hizkuntza…",
   "cmd.help": "Lortu laguntza",
   "cmd.showInGallery": "Erakutsi «Ikusi nire skill-a» atalean (dev.emkay.ai)",
-  "cmd.fromBlocks": "Ireki Emkay Blocks-eko skill bat…"
+  "cmd.fromBlocks": "Ireki Emkay Blocks-eko skill bat…",
+  "cmd.insertBlock": "Txertatu bloke bat…"
 }
