@@ -23,5 +23,6 @@
   "cmd.send": "Envia al meu Emkay (codi QR)",
   "cmd.addLanguage": "Afegeix una llengua…",
   "cmd.help": "Obtén ajuda",
-  "cmd.showInGallery": "Mostra a «Mira la meva skill» (dev.emkay.ai)"
+  "cmd.showInGallery": "Mostra a «Mira la meva skill» (dev.emkay.ai)",
+  "cmd.fromBlocks": "Obre una skill de l'Emkay Blocks…"
 }

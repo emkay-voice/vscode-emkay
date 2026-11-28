@@ -23,5 +23,6 @@
   "cmd.send": "Naar mijn Emkay sturen (QR-code)",
   "cmd.addLanguage": "Taal toevoegen…",
   "cmd.help": "Hulp krijgen",
-  "cmd.showInGallery": "Tonen in Bekijk mijn skill (dev.emkay.ai)"
+  "cmd.showInGallery": "Tonen in Bekijk mijn skill (dev.emkay.ai)",
+  "cmd.fromBlocks": "Een skill uit Emkay Blocks openen…"
 }

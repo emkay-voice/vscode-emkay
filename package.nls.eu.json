@@ -23,5 +23,6 @@
   "cmd.send": "Bidali nire Emkayra (QR kodea)",
   "cmd.addLanguage": "Gehitu hizkuntza…",
   "cmd.help": "Lortu laguntza",
-  "cmd.showInGallery": "Erakutsi «Ikusi nire skill-a» atalean (dev.emkay.ai)"
+  "cmd.showInGallery": "Erakutsi «Ikusi nire skill-a» atalean (dev.emkay.ai)",
+  "cmd.fromBlocks": "Ireki Emkay Blocks-eko skill bat…"
 }

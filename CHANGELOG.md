@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.9
+
+- **A skill from [Emkay Blocks](https://blocks.emkay.ai)**: *Continue in Emkay Dev* in Blocks puts the skill on the clipboard, and in an empty folder Emkay Dev asks whether you come from Blocks – the skill's files go into the folder, `__init__.py` and `my_blocks.py` open, and Emkay starts next to them. With no folder open yet, the skill waits while you open one. Also *From Emkay Blocks* in *New skill…*, and **Emkay: Open a skill from Emkay Blocks…**, which takes the zip Blocks downloads too (emkay-voice/vscode-emkay#4).
+
 ## 0.1.8
 
 - **Emkay: Show in See my skill**: puts your skill in [See my skill](https://dev.emkay.ai/gallery/) on dev.emkay.ai – it adds the topic `emkay-skill` to the skill's GitHub repository with your own GitHub sign-in, after asking, and tells you if the repository is private or not on GitHub yet. Run it again to take the skill away. Nothing made from a template is shown unless its owner asks for it.

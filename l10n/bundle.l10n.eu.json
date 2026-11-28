@@ -87,5 +87,17 @@
   "Show {0} in See my skill on dev.emkay.ai?": "{0} erakutsi «Ikusi nire skill-a» atalean dev.emkay.ai-n?",
   "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Denek ikusi ahal izango dute, beren Emkayn probatu eta beren kopia egin – amaituta egon ala ez; probatu gabe gisa markatuta dago. GitHub-en emkay-skill gaia jasotzen du, eta nahi duzunean ken dezakezu.",
   "Shown in See my skill: {0}": "«Ikusi nire skill-a» atalean erakutsia: {0}",
-  "Done: {0} shows up in See my skill within a few hours.": "Eginda: {0} ordu gutxiren buruan agertuko da «Ikusi nire skill-a» atalean."
+  "Done: {0} shows up in See my skill within a few hours.": "Eginda: {0} ordu gutxiren buruan agertuko da «Ikusi nire skill-a» atalean.",
+  "Choose the zip…": "Aukeratu zip fitxategia…",
+  "There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Dev in Blocks again – or choose the zip Blocks downloaded.": "Ez dago Emkay Blocks-eko skillik arbelean. Sakatu berriro Jarraitu Emkay Dev-en Blocks-en, edo aukeratu Blocks-ek deskargatu duen zip-a.",
+  "Open a skill from Emkay Blocks": "Ireki Emkay Blocks-eko skill bat",
+  "That zip has no skill from Emkay Blocks in it.": "Zip horrek ez du Emkay Blocks-eko skillik.",
+  "Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Dev puts it there when the folder is open.": "Ireki (edo sortu) lehenik karpeta huts bat skillarentzat. Blocks-eko skillak itxaron egiten du, eta Emkay Dev-ek bertan jartzen du karpeta irekita dagoenean.",
+  "{0} from Emkay Blocks is here: the same skill, with all its code. Emkay starts next to it now – change something, save, and try it.": "Emkay Blocks-eko {0} hemen dago: skill bera, bere kode guztiarekin. Emkay ondoan abiatzen da orain; aldatu zerbait, gorde eta probatu.",
+  "Put it here": "Jarri hemen",
+  "Put the skill from Emkay Blocks ({0}) in this folder?": "Emkay Blocks-eko skilla ({0}) karpeta honetan jarri?",
+  "Open the skill from Blocks": "Ireki Blocks-eko skilla",
+  "Coming from Emkay Blocks? Open the skill you made there.": "Emkay Blocks-etik zatoz? Ireki han egin zenuen skilla.",
+  "From Emkay Blocks": "Emkay Blocks-etik",
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "blocks.emkay.ai-n blokeekin egin zenuen skilla: skill bera, bere kode guztiarekin."
 }

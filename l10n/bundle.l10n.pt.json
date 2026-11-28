@@ -87,5 +87,17 @@
   "Show {0} in See my skill on dev.emkay.ai?": "Mostrar {0} em “Vê a minha skill” no dev.emkay.ai?",
   "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Todos poderão vê-la, experimentá-la no seu Emkay e fazer a sua própria cópia – pronta ou não; fica marcada como não testada. Recebe o tópico emkay-skill no GitHub, e pode retirá-la quando quiser.",
   "Shown in See my skill: {0}": "Mostrada em “Vê a minha skill”: {0}",
-  "Done: {0} shows up in See my skill within a few hours.": "Feito: {0} aparece em “Vê a minha skill” dentro de algumas horas."
+  "Done: {0} shows up in See my skill within a few hours.": "Feito: {0} aparece em “Vê a minha skill” dentro de algumas horas.",
+  "Choose the zip…": "Escolher o zip…",
+  "There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Dev in Blocks again – or choose the zip Blocks downloaded.": "Não há nenhuma skill do Emkay Blocks na área de transferência. Carregue outra vez em Continuar no Emkay Dev no Blocks – ou escolha o zip que o Blocks descarregou.",
+  "Open a skill from Emkay Blocks": "Abrir uma skill do Emkay Blocks",
+  "That zip has no skill from Emkay Blocks in it.": "Esse zip não tem nenhuma skill do Emkay Blocks.",
+  "Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Dev puts it there when the folder is open.": "Abra (ou crie) primeiro uma pasta vazia para a skill. A skill do Blocks espera, e o Emkay Dev põe-na lá quando a pasta estiver aberta.",
+  "{0} from Emkay Blocks is here: the same skill, with all its code. Emkay starts next to it now – change something, save, and try it.": "{0} do Emkay Blocks está aqui: a mesma skill, com todo o código. O Emkay arranca agora ao lado – mude algo, guarde e experimente.",
+  "Put it here": "Pôr aqui",
+  "Put the skill from Emkay Blocks ({0}) in this folder?": "Pôr a skill do Emkay Blocks ({0}) nesta pasta?",
+  "Open the skill from Blocks": "Abrir a skill do Blocks",
+  "Coming from Emkay Blocks? Open the skill you made there.": "Vem do Emkay Blocks? Abra a skill que fez lá.",
+  "From Emkay Blocks": "Do Emkay Blocks",
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "A skill que fez com blocos no blocks.emkay.ai – a mesma skill, com todo o código."
 }

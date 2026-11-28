@@ -87,5 +87,17 @@
   "Show {0} in See my skill on dev.emkay.ai?": "Vis {0} i Se min skill på dev.emkay.ai?",
   "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Så kan alle se den, prøve den i deres Emkay og lave deres egen kopi af den – færdig eller ej; den er mærket som ikke testet. Den får emnet emkay-skill på GitHub, og du kan fjerne den igen når som helst.",
   "Shown in See my skill: {0}": "Vist i Se min skill: {0}",
-  "Done: {0} shows up in See my skill within a few hours.": "Sådan: {0} dukker op i Se min skill inden for nogle timer."
+  "Done: {0} shows up in See my skill within a few hours.": "Sådan: {0} dukker op i Se min skill inden for nogle timer.",
+  "Choose the zip…": "Vælg zip-filen…",
+  "There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Dev in Blocks again – or choose the zip Blocks downloaded.": "Der er ingen skill fra Emkay Blocks i udklipsholderen. Tryk Fortsæt i Emkay Dev i Blocks igen – eller vælg den zip-fil, Blocks har hentet.",
+  "Open a skill from Emkay Blocks": "Åbn en skill fra Emkay Blocks",
+  "That zip has no skill from Emkay Blocks in it.": "Den zip-fil har ingen skill fra Emkay Blocks i sig.",
+  "Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Dev puts it there when the folder is open.": "Åbn (eller lav) først en tom mappe til skillen. Skillen fra Blocks venter, og Emkay Dev lægger den ind, når mappen er åben.",
+  "{0} from Emkay Blocks is here: the same skill, with all its code. Emkay starts next to it now – change something, save, and try it.": "{0} fra Emkay Blocks er her: den samme skill, med al dens kode. Emkay starter ved siden af nu – ret noget, gem, og prøv den.",
+  "Put it here": "Læg den her",
+  "Put the skill from Emkay Blocks ({0}) in this folder?": "Skal skillen fra Emkay Blocks ({0}) ligge i denne mappe?",
+  "Open the skill from Blocks": "Åbn skillen fra Blocks",
+  "Coming from Emkay Blocks? Open the skill you made there.": "Kommer du fra Emkay Blocks? Åbn den skill, du har lavet der.",
+  "From Emkay Blocks": "Fra Emkay Blocks",
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "Den skill, du har lavet med blokke på blocks.emkay.ai – den samme skill, med al dens kode."
 }

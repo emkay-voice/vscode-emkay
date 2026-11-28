@@ -783,7 +783,137 @@ async function templateFiles(tpl, name, author) {
   return out;
 }
 
-async function newSkill() {
+// --------------------------------------------- a skill from Emkay Blocks
+
+// Emkay Blocks (https://blocks.emkay.ai, emkay-voice/vscode-emkay#4) makes a
+// normal skill from blocks. "Continue in Emkay Dev" there puts it on the
+// clipboard as {emkayBlocksSkill: 1, name, files: {path: text}} and downloads
+// the same files as a zip; here they become the files of the folder. With no
+// folder open yet, the skill waits in globalState while one is opened.
+const WAITING = "emkay.fromBlocks";
+
+/** The skill on the clipboard, if it is one from Emkay Blocks. */
+async function blocksOnClipboard() {
+  try {
+    const j = JSON.parse(await vscode.env.clipboard.readText());
+    if (j && j.emkayBlocksSkill && j.files && typeof j.files === "object") return j;
+  } catch {}
+  return null;
+}
+
+/** A zip's text files: {path: text}. Stored or deflated, as Blocks and most zip tools make them. */
+async function unzip(bytes) {
+  const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  let end = bytes.length - 22;
+  while (end >= 0 && dv.getUint32(end, true) !== 0x06054b50) end--;
+  if (end < 0) throw new Error("not a zip");
+  const count = dv.getUint16(end + 10, true);
+  let p = dv.getUint32(end + 16, true);
+  const files = {};
+  for (let i = 0; i < count; i++) {
+    const method = dv.getUint16(p + 10, true), size = dv.getUint32(p + 20, true);
+    const nameLen = dv.getUint16(p + 28, true), extra = dv.getUint16(p + 30, true), comment = dv.getUint16(p + 32, true);
+    const local = dv.getUint32(p + 42, true);
+    const name = new TextDecoder().decode(bytes.subarray(p + 46, p + 46 + nameLen));
+    p += 46 + nameLen + extra + comment;
+    if (name.endsWith("/")) continue;
+    const start = local + 30 + dv.getUint16(local + 26, true) + dv.getUint16(local + 28, true);
+    let data = bytes.subarray(start, start + size);
+    if (method === 8) data = new Uint8Array(await new Response(new Blob([data]).stream().pipeThrough(new DecompressionStream("deflate-raw"))).arrayBuffer());
+    else if (method !== 0) continue;
+    files[name] = new TextDecoder().decode(data);
+  }
+  // Blocks' zip has the repository in one folder: <name>/…
+  const tops = new Set(Object.keys(files).map((f) => f.split("/")[0]));
+  if (tops.size === 1 && Object.keys(files).every((f) => f.includes("/"))) {
+    const top = [...tops][0] + "/";
+    return { name: top.slice(0, -1), files: Object.fromEntries(Object.entries(files).map(([k, v]) => [k.slice(top.length), v])) };
+  }
+  return { name: "", files };
+}
+
+/** Emkay: Open a skill from Emkay Blocks – from the clipboard, or the zip Blocks downloaded. */
+async function fromBlocks(context) {
+  let skill = await blocksOnClipboard();
+  if (!skill) {
+    const zip = t("Choose the zip…");
+    const pick = await vscode.window.showInformationMessage(
+      t("There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Dev in Blocks again – or choose the zip Blocks downloaded."), zip);
+    if (pick !== zip) return;
+    const uris = await vscode.window.showOpenDialog({ canSelectMany: false, filters: { zip: ["zip"] }, title: t("Open a skill from Emkay Blocks") });
+    if (!uris?.length) return;
+    try { skill = await unzip(await vscode.workspace.fs.readFile(uris[0])); } catch { skill = null; }
+    if (!skill || !Object.keys(skill.files).some((f) => f.endsWith("__init__.py"))) {
+      vscode.window.showWarningMessage(t("That zip has no skill from Emkay Blocks in it."));
+      return;
+    }
+  }
+  const ws = vscode.workspace.workspaceFolders?.[0];
+  if (!ws) {
+    // opening a folder starts VS Code's window again: the skill waits here meanwhile
+    await context.globalState.update(WAITING, { name: skill.name || "", files: skill.files, at: Date.now() });
+    const pick = await vscode.window.showInformationMessage(
+      t("Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Dev puts it there when the folder is open."), t("Open folder…"));
+    if (pick) await vscode.commands.executeCommand("workbench.action.files.openFolder");
+    return;
+  }
+  await putBlocksSkill(context, ws, skill);
+}
+
+/** The files of a skill from Blocks into the folder; then Emkay runs it next to the code. */
+async function putBlocksSkill(context, ws, skill) {
+  const files = skill.files;
+  const existing = [];
+  for (const path of Object.keys(files)) {
+    if (await exists(vscode.Uri.joinPath(ws.uri, path))) existing.push(path);
+  }
+  if (existing.length) {
+    const ok = await vscode.window.showWarningMessage(
+      t("{0} files are there already (e.g. {1}). Overwrite them?", existing.length, existing[0]), { modal: true }, t("Overwrite"));
+    if (!ok) return;
+  }
+  for (const [path, text] of Object.entries(files)) {
+    await vscode.workspace.fs.writeFile(vscode.Uri.joinPath(ws.uri, path), new TextEncoder().encode(text));
+  }
+  await context.globalState.update(WAITING, undefined);
+  const paths = Object.keys(files);
+  const main = paths.filter((p) => p.endsWith("/__init__.py") && !/(^|\/)tests?\//.test(p)).sort((a, b) => a.length - b.length)[0];
+  const mine = paths.find((p) => p.endsWith("/my_blocks.py"));
+  for (const p of [mine, main].filter(Boolean)) {
+    await vscode.window.showTextDocument(vscode.Uri.joinPath(ws.uri, p), { preview: false, viewColumn: vscode.ViewColumn.One });
+  }
+  await updateContext();
+  vscode.window.showInformationMessage(t("{0} from Emkay Blocks is here: the same skill, with all its code. Emkay starts next to it now – change something, save, and try it.", skill.name || main?.split("/")[0] || ""));
+  await vscode.commands.executeCommand("emkay.run");
+}
+
+/**
+ * When Emkay Dev starts: a skill from Blocks waiting for this folder is put
+ * in it (after asking); and in an empty folder – where a skill is about to
+ * be made – Emkay Dev asks whether you come from Blocks. It reads the
+ * clipboard only if you say so, and says nothing in any other window.
+ */
+async function offerBlocks(context) {
+  const ws = vscode.workspace.workspaceFolders?.[0];
+  const waiting = context.globalState.get(WAITING);
+  if (waiting && Date.now() - (waiting.at || 0) > 60 * 60 * 1000) await context.globalState.update(WAITING, undefined);
+  else if (waiting && ws) {
+    const here = t("Put it here");
+    const pick = await vscode.window.showInformationMessage(
+      t("Put the skill from Emkay Blocks ({0}) in this folder?", waiting.name || "skill"), here);
+    if (pick === here) await putBlocksSkill(context, ws, waiting);
+    return;
+  }
+  if (!ws) return;
+  const entries = await vscode.workspace.fs.readDirectory(ws.uri).catch(() => [["?"]]);
+  if (entries.some(([n]) => !n.startsWith("."))) return;   // not an empty folder
+  const open = t("Open the skill from Blocks"), make = t("New skill…");
+  const pick = await vscode.window.showInformationMessage(t("Coming from Emkay Blocks? Open the skill you made there."), open, make);
+  if (pick === open) await fromBlocks(context);
+  else if (pick === make) await vscode.commands.executeCommand("emkay.newSkill");
+}
+
+async function newSkill(context) {
   let ws = vscode.workspace.workspaceFolders?.[0];
   if (!ws) {
     const pick = await vscode.window.showInformationMessage(
@@ -792,14 +922,13 @@ async function newSkill() {
     return;
   }
   const list = await templates();
-  let tpl = list[0];
-  if (list.length > 1) {
-    const picked = await vscode.window.showQuickPick(list.map((x) => ({
-      label: `${x.icon || "🧩"} ${inLang(x.name)}`, detail: inLang(x.description), description: x.repo, tpl: x,
-    })), { title: t("New skill"), placeHolder: t("What kind of skill?") });
-    if (!picked) return;
-    tpl = picked.tpl;
-  }
+  const picked = await vscode.window.showQuickPick([
+    ...list.map((x) => ({ label: `${x.icon || "🧩"} ${inLang(x.name)}`, detail: inLang(x.description), description: x.repo, tpl: x })),
+    { label: `🧱 ${t("From Emkay Blocks")}`, detail: t("The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code."), blocks: true },
+  ], { title: t("New skill"), placeHolder: t("What kind of skill?") });
+  if (!picked) return;
+  if (picked.blocks) return fromBlocks(context);
+  const tpl = picked.tpl;
   const name = await vscode.window.showInputBox({
     title: t("New skill"),
     prompt: tpl.kind === "plugin" ? t("What does your plugin do? A few words, e.g. \"quiet hours\"")
@@ -1003,7 +1132,8 @@ function activate(context) {
   const reg = (id, fn) => context.subscriptions.push(vscode.commands.registerCommand(id, fn));
   reg("emkay.open", () => openPanel(context));
   reg("emkay.run", () => run(context));
-  reg("emkay.newSkill", () => newSkill());
+  reg("emkay.newSkill", () => newSkill(context));
+  reg("emkay.fromBlocks", () => fromBlocks(context));
   reg("emkay.stop", () => stop());
   reg("emkay.showLog", () => out.show());
   reg("emkay.send", () => sendToEmkay(context));
@@ -1047,6 +1177,7 @@ function activate(context) {
     setStatus();
     if (skill) refreshTests();
   });
+  offerBlocks(context).catch((e) => out.appendLine(`Emkay Blocks: ${e.message || e}`));
 }
 
 function deactivate() {}

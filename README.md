@@ -14,6 +14,13 @@ browser: [vscode.dev](https://vscode.dev) and github.dev.
   provider, …), name it, and get a working skill in the open folder. The
   templates come from [dev.emkay.ai](https://dev.emkay.ai), one repository
   each; without a connection, the plain skill built into the extension.
+- **A skill from [Emkay Blocks](https://blocks.emkay.ai)** – *Continue in
+  Emkay Dev* there puts the skill on the clipboard (and downloads it as a
+  zip). Open an empty folder, and Emkay Dev asks whether you come from
+  Blocks: the same skill, with all its code, and Emkay next to it. Also in
+  *New skill…* (*From Emkay Blocks*) and as **Emkay: Open a skill from
+  Emkay Blocks…**, which takes the zip too. Your own blocks are in
+  `my_blocks.py`; the blocks themselves in `blocks.json`.
 - **Emkay: Run the skill in Emkay** (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd>,
   or ▷ in the editor title) – Emkay opens in a panel next to the code and
   loads the skill from its files, the way ovos-core loads a skill from a

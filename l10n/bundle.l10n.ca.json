@@ -87,5 +87,17 @@
   "Show {0} in See my skill on dev.emkay.ai?": "Vols mostrar {0} a «Mira la meva skill» a dev.emkay.ai?",
   "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Tothom podrà veure-la, provar-la al seu Emkay i fer-ne la seva pròpia còpia – acabada o no; surt marcada com a no provada. Rep el tema emkay-skill a GitHub, i la pots treure quan vulguis.",
   "Shown in See my skill: {0}": "Mostrada a «Mira la meva skill»: {0}",
-  "Done: {0} shows up in See my skill within a few hours.": "Fet: {0} apareixerà a «Mira la meva skill» d'aquí a unes hores."
+  "Done: {0} shows up in See my skill within a few hours.": "Fet: {0} apareixerà a «Mira la meva skill» d'aquí a unes hores.",
+  "Choose the zip…": "Tria el zip…",
+  "There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Dev in Blocks again – or choose the zip Blocks downloaded.": "No hi ha cap skill de l'Emkay Blocks al porta-retalls. Torna a prémer Continua a l'Emkay Dev al Blocks, o tria el zip que ha baixat el Blocks.",
+  "Open a skill from Emkay Blocks": "Obre una skill de l'Emkay Blocks",
+  "That zip has no skill from Emkay Blocks in it.": "Aquest zip no té cap skill de l'Emkay Blocks.",
+  "Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Dev puts it there when the folder is open.": "Obre (o crea) primer una carpeta buida per a la skill. La skill del Blocks espera, i l'Emkay Dev la hi posa quan la carpeta és oberta.",
+  "{0} from Emkay Blocks is here: the same skill, with all its code. Emkay starts next to it now – change something, save, and try it.": "{0} de l'Emkay Blocks ja és aquí: la mateixa skill, amb tot el seu codi. L'Emkay s'engega ara al costat; canvia alguna cosa, desa i prova-la.",
+  "Put it here": "Posa-la aquí",
+  "Put the skill from Emkay Blocks ({0}) in this folder?": "Vols posar la skill de l'Emkay Blocks ({0}) en aquesta carpeta?",
+  "Open the skill from Blocks": "Obre la skill del Blocks",
+  "Coming from Emkay Blocks? Open the skill you made there.": "Véns de l'Emkay Blocks? Obre la skill que hi vas fer.",
+  "From Emkay Blocks": "De l'Emkay Blocks",
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "La skill que vas fer amb blocs a blocks.emkay.ai: la mateixa skill, amb tot el seu codi."
 }

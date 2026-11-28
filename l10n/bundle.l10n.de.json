@@ -87,5 +87,17 @@
   "Show {0} in See my skill on dev.emkay.ai?": "{0} in „Sieh dir meinen Skill an“ auf dev.emkay.ai zeigen?",
   "Everyone can then see it, try it in their Emkay and make their own copy of it – ready or not; it is marked as not tested. It gets the topic emkay-skill on GitHub, and you can take it away again at any time.": "Dann können alle ihn sehen, in ihrem Emkay ausprobieren und sich eine eigene Kopie machen – fertig oder nicht; er ist als nicht getestet markiert. Er bekommt auf GitHub das Thema emkay-skill, und du kannst ihn jederzeit wieder entfernen.",
   "Shown in See my skill: {0}": "In „Sieh dir meinen Skill an“ gezeigt: {0}",
-  "Done: {0} shows up in See my skill within a few hours.": "Fertig: {0} erscheint innerhalb weniger Stunden in „Sieh dir meinen Skill an“."
+  "Done: {0} shows up in See my skill within a few hours.": "Fertig: {0} erscheint innerhalb weniger Stunden in „Sieh dir meinen Skill an“.",
+  "Choose the zip…": "Zip-Datei auswählen…",
+  "There is no skill from Emkay Blocks on the clipboard. Press Continue in Emkay Dev in Blocks again – or choose the zip Blocks downloaded.": "In der Zwischenablage ist kein Skill aus Emkay Blocks. Drück in Blocks noch einmal In Emkay Dev weitermachen – oder wähl die Zip-Datei, die Blocks heruntergeladen hat.",
+  "Open a skill from Emkay Blocks": "Einen Skill aus Emkay Blocks öffnen",
+  "That zip has no skill from Emkay Blocks in it.": "In dieser Zip-Datei ist kein Skill aus Emkay Blocks.",
+  "Open (or make) an empty folder for the skill first. The skill from Blocks waits, and Emkay Dev puts it there when the folder is open.": "Öffne (oder erstelle) zuerst einen leeren Ordner für den Skill. Der Skill aus Blocks wartet, und Emkay Dev legt ihn hinein, sobald der Ordner offen ist.",
+  "{0} from Emkay Blocks is here: the same skill, with all its code. Emkay starts next to it now – change something, save, and try it.": "{0} aus Emkay Blocks ist da: derselbe Skill, mit seinem ganzen Code. Emkay startet jetzt daneben – ändere etwas, speichere und probier ihn aus.",
+  "Put it here": "Hierher legen",
+  "Put the skill from Emkay Blocks ({0}) in this folder?": "Den Skill aus Emkay Blocks ({0}) in diesen Ordner legen?",
+  "Open the skill from Blocks": "Den Skill aus Blocks öffnen",
+  "Coming from Emkay Blocks? Open the skill you made there.": "Kommst du von Emkay Blocks? Öffne den Skill, den du dort gemacht hast.",
+  "From Emkay Blocks": "Aus Emkay Blocks",
+  "The skill you made with blocks on blocks.emkay.ai – the same skill, with all its code.": "Der Skill, den du mit Blöcken auf blocks.emkay.ai gemacht hast – derselbe Skill, mit seinem ganzen Code."
 }
